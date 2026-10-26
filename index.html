@@ -6,6 +6,8 @@
 <style>img{max-width:100%}[hidden]{display:none!important}body{margin:0}</style>
 <title>Signal / Saints</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Signal / Saints — alternative rock and electronic duo from Berlin.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%2306070a%22/%3E%3Cpath d=%22M36 10h9L28 54h-9z%22 fill=%22%23ff2340%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -700,6 +702,332 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
   #embers,.grain{display:none}
   .hero-title .slash{transform:rotate(24deg)}
 }
+
+/* ================= v2 additions ================= */
+html.locked,html.locked body{overflow:hidden}
+[hidden]{display:none!important}
+.ov[hidden]{display:none!important}
+.view[hidden]{display:none!important}
+.nav-links a{font-size:12px}
+.foot nav a,.foot dt{font-size:12px}
+.copy-mail{font-size:13px}
+.join p{font-size:12px}
+.cart{cursor:pointer;font:inherit;color:var(--fg);font-family:var(--mono);font-size:12px;letter-spacing:.18em}
+.toast.err b{background:#ffb020}
+.toast{font-size:12px;pointer-events:none}
+
+/* layout fixes after removing intro buttons */
+.her-block .aside{justify-content:flex-start}
+.him-block .left{justify-content:flex-start}
+
+/* ---------- release: real player ---------- */
+.wave i{transition:background .15s}
+.wave{touch-action:none}
+.rel-a .kicker{letter-spacing:.42em}
+
+/* ---------- mini player ---------- */
+.mini{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;display:flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;background:rgba(12,14,19,.94);border:1px solid var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);max-width:calc(100% - 32px);transform:translateY(0);transition:transform .45s var(--ease),opacity .3s}
+.mini[hidden]{display:flex!important;transform:translateY(calc(100% + 40px));opacity:0;pointer-events:none}
+.mini img{width:40px;height:40px;object-fit:cover;flex:none}
+.mini .pbtn{--s:38px}
+.mini .pbtn svg{width:12px;height:12px}
+.mini.is-playing .i-play{display:none}.mini.is-playing .i-pause{display:block}
+.mini-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mini-t b{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.mini-t span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--mute);font-variant-numeric:tabular-nums}
+.mini a{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);border-left:1px solid var(--line-2);padding-left:12px;white-space:nowrap}
+.mini a:hover{color:var(--red)}
+.mini .bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--red);transform-origin:0 50%;transform:scaleX(0)}
+
+/* ---------- discography ---------- */
+.disco{padding-block:30px 100px;position:relative}
+.disco-grid{display:grid;grid-template-columns:minmax(0,3.2fr) minmax(0,8.8fr);gap:40px}
+.disco .copy{display:flex;flex-direction:column;gap:26px}
+.disco h2{font-size:clamp(64px,7vw,112px)}
+.disco-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.dcard{display:flex;flex-direction:column;gap:12px;text-align:left;cursor:pointer}
+.dcard .frame{aspect-ratio:1;border-width:2px!important;transition:border-color .3s}
+.dcard.is-active .frame{border-color:var(--red)!important}
+.dcard:hover .frame img{transform:scale(1.05)}
+.dcard h3{margin:0;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.dcard .meta{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);display:flex;gap:16px}
+.ddetail{margin-top:22px;border:1px solid var(--line-2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:rgba(12,14,19,.7)}
+.ddetail .dl{padding:28px 32px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--line)}
+.ddetail .dcover{display:none;width:min(260px,70%);aspect-ratio:1;object-fit:cover;border:1px solid var(--line-2)}
+.ddetail h3{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(48px,4.6vw,72px);line-height:.9;text-transform:uppercase}
+.ddetail .dmeta{font-family:var(--mono);font-size:14px;letter-spacing:.2em;text-transform:uppercase}
+.ddetail p{margin:0;font-family:var(--mono);font-size:13px;letter-spacing:.14em;line-height:1.7;text-transform:uppercase;color:var(--soft);max-width:44ch}
+.dplat{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.dplat a{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line-2);padding:10px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.dplat a:hover{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.dplat svg{width:16px;height:10px}
+.tracks{list-style:none;margin:0;padding:22px 32px;display:flex;flex-direction:column}
+.tracks li{display:grid;grid-template-columns:34px 30px minmax(0,1fr) auto;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:14px;letter-spacing:.1em}
+.tracks li:last-child{border-bottom:0}
+.tracks .n{color:var(--mute);font-variant-numeric:tabular-nums}
+.tracks .t{font-variant-numeric:tabular-nums;color:var(--soft)}
+.tracks .tp{--s:28px;width:var(--s);height:var(--s);border-radius:50%;background:var(--red);display:grid;place-items:center}
+.tracks .tp svg{width:9px;height:9px;fill:#fff}
+.tracks .tp .i-pause{display:none}
+.tracks .tp.is-playing .i-play{display:none}.tracks .tp.is-playing .i-pause{display:block}
+.tracks li.has-audio .name{color:var(--fg)}
+.tracks .name{color:var(--soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tracks .tag{margin-left:10px;font-size:10px;letter-spacing:.2em;color:var(--red);border:1px solid var(--red);padding:2px 6px;vertical-align:middle}
+
+/* ---------- page views ---------- */
+.back-home{display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;border:1px solid var(--line-2);padding:10px 16px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.back-home svg{width:8px;height:12px;transform:scaleX(-1)}
+.back-home:hover{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.page{padding-block:70px 110px;min-height:70vh}
+.page-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 40px;margin-bottom:44px}
+.page-head h1{font-size:clamp(72px,10vw,150px);margin:0}
+.page-head p{margin:0;font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);line-height:1.8;max-width:46ch}
+.crumb{display:flex;gap:12px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:22px}
+.crumb a{color:var(--fg)}.crumb a:hover{color:var(--red)}
+.pfilters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pfilters button{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line-2);padding:10px 16px;color:var(--soft);transition:background .25s,color .25s,border-color .25s}
+.pfilters button:hover{color:var(--fg);border-color:var(--fg)}
+.pfilters button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.pfilters button sup{font-size:9px;margin-left:6px;opacity:.75}
+
+/* archive masonry */
+.arch{columns:3;column-gap:16px}
+.arch-item{display:block;width:100%;margin:0 0 16px;break-inside:avoid;position:relative;cursor:zoom-in}
+.arch-item .frame{display:block}
+.arch-item img{width:100%;height:auto;display:block}
+.arch-item .cap{position:absolute;left:12px;bottom:10px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 8px #000;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .4s var(--ease)}
+.arch-item:hover .cap,.arch-item:focus-visible .cap{opacity:1;transform:none}
+.arch-item:hover .frame{border-color:var(--fg)!important}
+.arch-item.in{animation:archIn .6s var(--ease) both}
+@keyframes archIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (hover:none){.arch-item .cap{opacity:1;transform:none}}
+
+/* gallery hover (no cursor label) */
+.tile{cursor:zoom-in}
+.tile:hover .frame{border-color:var(--fg)!important}
+.tile:hover .frame img{filter:brightness(1.08)}
+
+/* videos page */
+.vlist{display:flex;flex-direction:column;gap:56px}
+.vcard{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
+.vcard:nth-child(even) .vposter{order:2}
+.vposter{position:relative;display:block;width:100%;aspect-ratio:16/9;cursor:pointer}
+.vposter .frame{position:absolute;inset:0}
+.vplay{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:2px solid rgba(236,235,231,.9);background:rgba(6,7,10,.4);display:grid;place-items:center;z-index:3;transition:transform .35s var(--ease),background .3s,border-color .3s}
+.vplay svg{width:22px;height:22px;fill:#fff;margin-left:4px}
+.vposter:hover .vplay,.feat:hover .vplay{transform:scale(1.08);background:var(--red);border-color:var(--red)}
+.vdur{position:absolute;right:14px;top:12px;z-index:3;font-family:var(--mono);font-size:14px;letter-spacing:.06em;text-shadow:0 1px 8px #000;font-variant-numeric:tabular-nums}
+.vinfo{display:flex;flex-direction:column;gap:16px}
+.vinfo .kind{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.vinfo h2{font-size:clamp(48px,5vw,80px);margin:0}
+.vinfo p{margin:0;font-size:17px;line-height:1.65;color:var(--soft);max-width:48ch}
+.vinfo dl{display:flex;gap:28px;margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.vinfo dt{color:var(--mute)}.vinfo dd{margin:4px 0 0;font-variant-numeric:tabular-nums}
+
+/* shop */
+.shop-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px}
+.prod .pimg{position:relative}
+.prod .prod-open{display:block;width:100%;cursor:pointer}
+.prod .frame{display:block}
+.prod .frame img{width:100%;height:100%;object-fit:cover}
+.prod .cat{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.prod .info{gap:12px}
+.prod .info span:first-child{min-width:0}
+.prod.in{animation:archIn .6s var(--ease) both}
+
+/* ---------- overlays ---------- */
+.ov{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;padding:calc(20px + env(safe-area-inset-top,0px)) var(--gutr) calc(20px + env(safe-area-inset-bottom,0px)) var(--gut);background:rgba(6,7,10,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transition:opacity .35s}
+.ov.open{opacity:1}
+.ov-box{position:relative;width:min(1080px,100%);max-height:100%;overflow:auto;background:var(--panel);border:1px solid var(--line-2);transform:translateY(24px) scale(.98);transition:transform .5s var(--ease);overscroll-behavior:contain}
+.ov.open .ov-box{transform:none}
+.ov-x{position:absolute;right:12px;top:12px;z-index:5;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(6,7,10,.6);transition:background .3s,transform .4s var(--ease)}
+.ov-x:hover{background:var(--red);transform:rotate(90deg)}
+.ov-x svg{width:14px;height:14px;stroke:var(--fg);stroke-width:2}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.btn-solid{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--red);color:#fff;padding:16px 24px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,color .3s}
+.btn-solid:hover{background:var(--fg);color:var(--ink)}
+.btn-solid[disabled]{opacity:.4;pointer-events:none}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--line-2);padding:15px 22px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg);transition:border-color .3s,background .3s}
+.btn-line:hover{border-color:var(--fg)}
+.demo-note{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);display:flex;gap:8px;align-items:center}
+.demo-note::before{content:"";width:6px;height:6px;border-radius:50%;background:#ffb020;flex:none}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.field input,.field select{background:var(--ink);border:1px solid var(--line-2);color:var(--fg);padding:12px 14px;font-family:var(--body);font-size:16px;border-radius:0;width:100%}
+.field input:focus,.field select:focus{outline:none;border-color:var(--fg)}
+.field.bad input,.field.bad select{border-color:#ffb020}
+.field .err{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#ffb020;min-height:0}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fgrid .full{grid-column:1/-1}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-2)}
+.qty button{width:40px;height:40px;font-size:18px;color:var(--fg)}
+.qty button:hover{background:var(--fg);color:var(--ink)}
+.qty output{min-width:36px;text-align:center;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.sum{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.sum b{font-family:var(--display);font-size:34px;font-weight:800;letter-spacing:.02em}
+.steps{display:flex;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.steps span.on{color:var(--fg)}
+.steps i{opacity:.5}
+.done-mark{width:56px;height:56px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.done-mark svg{width:24px;height:24px;stroke:#fff;stroke-width:2.5;fill:none}
+.facts{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px}
+.facts dt{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.facts dd{margin:4px 0 0;font-size:16px}
+
+/* lightbox */
+.lb{flex-direction:column;padding:0;background:rgba(6,7,10,.96)}
+.lb-top{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:20px;padding:calc(16px + env(safe-area-inset-top,0px)) calc(70px + var(--gutr)) 16px var(--gut);font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;z-index:4}
+.lb-top .ov-x{top:calc(10px + env(safe-area-inset-top,0px));right:var(--gutr)}
+.lb-top #lbCat{color:var(--mute)}
+.lb-stage{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:70px 80px 40px}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--line-2);transition:opacity .25s}
+.lb-nav{position:absolute;top:50%;width:52px;height:52px;margin-top:-26px;border:1px solid var(--line-2);display:grid;place-items:center;background:rgba(6,7,10,.6);transition:background .3s}
+.lb-nav:hover{background:var(--red)}
+.lb-nav svg{width:12px;height:16px}
+.lb-nav.prev{left:var(--gut)}.lb-nav.prev svg{transform:scaleX(-1)}
+.lb-nav.next{right:var(--gutr)}
+
+/* video modal */
+.vm-box{width:min(1180px,100%);background:#000;overflow:visible}
+.vm-box video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.vm-meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:14px 16px;background:var(--panel);font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.vm-meta span{color:var(--mute)}
+.vm-box .ov-x{top:-54px;right:0}
+
+/* product modal */
+.pm-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pm-media{background:var(--ink);display:flex;flex-direction:column}
+.pm-media .main{aspect-ratio:1;width:100%;object-fit:cover}
+.pm-thumbs{display:flex;gap:8px;padding:8px}
+.pm-thumbs button{width:64px;height:64px;border:1px solid var(--line-2);overflow:hidden}
+.pm-thumbs button[aria-pressed="true"]{border-color:var(--red)}
+.pm-thumbs img{width:100%;height:100%;object-fit:cover}
+.pm-info{padding:40px 36px 32px;display:flex;flex-direction:column;gap:18px}
+.pm-info h3{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(40px,4vw,60px);line-height:.92;text-transform:uppercase}
+.pm-info .price{font-family:var(--display);font-weight:800;font-size:32px}
+.pm-info p{margin:0;font-size:16px;line-height:1.65;color:var(--soft)}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sizes button{min-width:48px;height:44px;padding:0 12px;border:1px solid var(--line-2);font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--fg)}
+.sizes button:hover{border-color:var(--fg)}
+.sizes button[aria-pressed="true"]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.sizes.bad button{border-color:#ffb020}
+.opt-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);display:flex;justify-content:space-between}
+.pm-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.pm-row .btn-solid{flex:1;min-width:200px}
+.pm-msg{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;min-height:18px}
+.pm-msg.bad{color:#ffb020}.pm-msg.ok{color:var(--fg)}
+.pm-msg a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+
+/* cart drawer */
+.cd{justify-content:flex-end;padding:0}
+.cd-box{width:min(480px,100%);height:100%;max-height:none;border-width:0 0 0 1px;transform:translateX(40px);display:flex;flex-direction:column}
+.ov.open .cd-box{transform:none}
+.cd-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(22px + env(safe-area-inset-top,0px)) 70px 18px 24px;border-bottom:1px solid var(--line)}
+.cd-head h3{margin:0;font-family:var(--display);font-weight:900;font-size:40px;text-transform:uppercase;line-height:1}
+.cd-box .ov-x{top:calc(18px + env(safe-area-inset-top,0px))}
+.cd-body{flex:1;overflow:auto;padding:20px 24px;display:flex;flex-direction:column;gap:18px}
+.cd-foot{border-top:1px solid var(--line);padding:18px 24px calc(18px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px}
+.citem{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:14px;align-items:start;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.citem img{width:72px;height:72px;object-fit:cover;border:1px solid var(--line-2)}
+.citem h4{margin:0 0 4px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.citem .sub{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--mute)}
+.citem .qty{margin-top:10px}
+.citem .qty button{width:32px;height:32px;font-size:16px}
+.citem .right{display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+.citem .rm{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);text-decoration:underline;text-underline-offset:3px}
+.citem .rm:hover{color:var(--red)}
+.cempty{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding-top:20px}
+.cempty p{margin:0;font-size:17px;color:var(--soft)}
+.btn-solid svg,.btn-line svg{width:28px;height:10px;flex:none}
+.cd-box .btn-solid,.cd-box .btn-line{justify-content:space-between;padding:12px 18px;width:100%}
+.cd-box .tm-actions .btn-line{width:auto}
+.cd-box .cempty .btn-line{align-self:stretch}
+.rv-list{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+.rv-list div{display:flex;justify-content:space-between;gap:12px}
+.rv-list span:last-child{font-variant-numeric:tabular-nums}
+.deliv{display:flex;flex-direction:column;gap:8px}
+.deliv label{display:flex;align-items:center;gap:12px;border:1px solid var(--line-2);padding:12px 14px;cursor:pointer;font-family:var(--mono);font-size:13px;letter-spacing:.08em}
+.deliv label:has(input:checked){border-color:var(--fg)}
+.deliv input{accent-color:var(--red)}
+.deliv b{margin-left:auto;font-weight:500}
+
+/* tickets modal */
+.tm-box{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);width:min(980px,100%)}
+.tm-media{position:relative;min-height:100%;background:var(--ink)}
+.tm-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm-media .chip{position:absolute;left:16px;top:16px;background:var(--ink)}
+.tm-body{padding:40px 36px 30px;display:flex;flex-direction:column;gap:18px}
+.tm-body h3{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(44px,4.6vw,68px);line-height:.92;text-transform:uppercase}
+.ttypes{display:flex;flex-direction:column;gap:8px;border:0;margin:0;padding:0}
+.ttypes legend{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-bottom:8px;padding:0}
+.ttypes label{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;border:1px solid var(--line-2);padding:12px 14px;cursor:pointer}
+.ttypes label:has(input:checked){border-color:var(--red);background:rgba(255,35,64,.08)}
+.ttypes input{accent-color:var(--red)}
+.ttypes .tn{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.ttypes .td2{display:block;font-family:var(--body);font-size:13px;letter-spacing:0;text-transform:none;color:var(--mute);margin-top:2px}
+.ttypes .tpz{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.tm-actions{display:flex;gap:10px;flex-wrap:wrap}
+.tm-actions .btn-solid{flex:1;min-width:180px}
+
+/* tour rows v2 */
+.row{grid-template-columns:170px minmax(0,1.2fr) minmax(0,1.5fr) 100px 170px}
+.row .d{display:flex;flex-direction:column;gap:3px;letter-spacing:.12em}
+.row .d small{font-size:11px;letter-spacing:.16em;color:var(--mute);font-weight:400}
+.row.past{opacity:.45}
+.row.past::before{display:none}
+.tour .tix{cursor:pointer;font-family:var(--mono);text-transform:uppercase}
+.tour .tix.wait{background:transparent;color:#06070a;border:1px dashed #06070a}
+.tour .tix.wait:hover{background:#06070a;color:#fff}
+.tour .tix[disabled]{background:transparent;color:var(--mute);border:1px dashed var(--line-2);pointer-events:none}
+.more-dates[hidden]{display:none}
+.cd-none{font-family:var(--mono);font-size:14px;letter-spacing:.14em;text-transform:uppercase;max-width:30ch;line-height:1.7}
+#moreDates{cursor:pointer;color:var(--fg)}
+
+@media (max-width:1180px){
+  .shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:980px){
+  .disco-grid{grid-template-columns:minmax(0,1fr)}
+  .disco-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:6px;margin-right:calc(-1 * var(--gutr));padding-right:var(--gutr)}
+  .disco-cards .dcard{flex:0 0 min(62%,280px);scroll-snap-align:start}
+  .ddetail{grid-template-columns:minmax(0,1fr)}
+  .ddetail .dl{border-right:0;border-bottom:1px solid var(--line)}
+  .ddetail .dcover{display:block}
+  .arch{columns:2}
+  .vcard{grid-template-columns:minmax(0,1fr);gap:20px}
+  .vcard:nth-child(even) .vposter{order:0}
+  .pm-box,.tm-box{grid-template-columns:minmax(0,1fr)}
+  .tm-media{min-height:200px;aspect-ratio:16/8}
+  .page-head{grid-template-columns:minmax(0,1fr)}
+  .row{grid-template-columns:140px minmax(0,1fr) minmax(0,1.3fr) 90px 150px;gap:16px}
+}
+@media (max-width:640px){
+  .shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+  .arch{columns:2;column-gap:8px}.arch-item{margin-bottom:8px}
+  .ddetail .dl,.tracks{padding:20px 18px}
+  .tracks li{grid-template-columns:28px 28px minmax(0,1fr) auto;font-size:13px}
+  .lb-stage{padding:64px 12px 84px}
+  .lb-nav{top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));margin:0}
+  .pm-info,.tm-body{padding:28px 20px 24px}
+  .fgrid{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .vm-box .ov-x{top:-50px}
+  .ov:not(.cd):not(.lb){align-items:flex-start;padding-top:calc(64px + env(safe-area-inset-top,0px))}
+  .row{grid-template-columns:auto minmax(0,1fr) auto;gap:4px 14px;padding:14px 4px}
+  .row .d{grid-row:1/3}
+  .row .c{grid-column:2;grid-row:1}
+  .row .v{grid-column:2;grid-row:2;border:0;padding:0;font-size:11px}
+  .row .chip{display:none}
+  .row .tix{grid-column:3;grid-row:1/3;padding:10px 12px;gap:8px;letter-spacing:.12em}
+  .row .d small{font-size:10px}
+  .mini a{display:none}
+  .prod .add{font-size:11px;letter-spacing:.1em;padding:10px 6px}
+  .prod .info{font-size:12px;letter-spacing:.08em}
+  .dplat a{padding:9px 12px;font-size:11px}
+  .page-head h1{font-size:clamp(64px,19vw,96px)}
+}
+@media (prefers-reduced-motion:reduce){.arch-item.in,.prod.in{animation:none}}
+
 </style>
 </head>
 <body>
@@ -724,14 +1052,13 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <canvas id="embers" aria-hidden="true"></canvas>
 <div class="cursor" aria-hidden="true"><span>PLAY</span></div>
 <div class="cursor-dot" aria-hidden="true"></div>
-<div class="peek" aria-hidden="true" hidden><img alt="" src="img/tour.webp"></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="logo" href="#home" data-hover>SIGNAL<em>/</em>SAINTS</a>
     <nav class="nav-links" aria-label="Main">
       <a href="#home" data-sec="home">Home</a>
-      <a href="#music" data-sec="music">Release</a>
+      <a href="#music" data-sec="music">Music</a>
       <a href="#about" data-sec="about">About</a>
       <a href="#her" data-sec="her">Band</a>
       <a href="#media" data-sec="media">Videos</a>
@@ -746,7 +1073,7 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
         <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#ig"/></svg></a>
         <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><svg><use href="#sp"/></svg></a>
       </div>
-      <a class="cart" href="#merch" id="cart"><span>CART</span><b id="cartN">0</b></a>
+      <button class="cart" id="cart" aria-label="Open cart"><span>CART</span><b id="cartN">0</b></button>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
     </div>
   </div>
@@ -755,7 +1082,7 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Menu">
     <a href="#home"><small>01</small><span>Home</span></a>
-    <a href="#music"><small>02</small><span>Release</span></a>
+    <a href="#music"><small>02</small><span>Music</span></a>
     <a href="#about"><small>03</small><span>About</span></a>
     <a href="#her"><small>04</small><span>Band</span></a>
     <a href="#media"><small>05</small><span>Videos</span></a>
@@ -765,7 +1092,7 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
   </nav>
 </div>
 
-<main>
+<main class="view" id="view-home">
 <!-- ============ 01 HERO ============ -->
 <section class="hero" id="home">
   <div class="wrap hero-grid">
@@ -780,7 +1107,7 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
       </h1>
       <p class="tagline">Two perspectives<br>One sound</p>
       <div class="cta-row">
-        <a class="btn magnetic" href="#music" data-hover><svg><use href="#tri"/></svg>Listen now</a>
+        <a class="btn magnetic" href="#music" data-listen data-hover><svg><use href="#tri"/></svg>Listen now</a>
         <a class="ar" href="#music" aria-label="Go to latest release"><svg><use href="#arrow"/></svg></a>
       </div>
       <a class="scroll-hint mono" href="#music"><i></i>Scroll<br>to explore</a>
@@ -794,10 +1121,6 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
       <div class="card3d him tilt" data-depth="-1">
         <div class="glow"></div>
         <div class="frame"><img src="img/him.webp?v=2" style="object-position:50% 18%" alt="Drummer of Signal / Saints in red stage haze"><img class="kiss" src="img/him_b.webp" style="object-position:50% 18%" alt="Drummer smoking in red stage haze"></div>
-      </div>
-      <div class="watch">
-        <span class="mono">Watch<br>intro</span>
-        <button class="play magnetic" data-video="feat" data-title="Signal / Saints &mdash; Intro" data-dur="1:12" data-label="PLAY" aria-label="Watch intro"><svg><use href="#tri"/></svg></button>
       </div>
     </div>
   </div>
@@ -817,22 +1140,22 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
       <div class="rel-a">
         <div class="sec-no rv"><b>02</b><i></i></div>
         <h2 class="disp rv">Latest<br><span class="red">Release</span></h2>
-        <div class="stack rv"><span class="mono" style="letter-spacing:.42em">New single</span><span class="dash" style="margin-top:12px"></span></div>
+        <div class="stack rv"><span class="mono kicker">New album</span><span class="dash" style="margin-top:12px"></span></div>
         <div class="cover-wrap tilt" id="coverWrap">
           <div class="vinyl" aria-hidden="true"></div>
-          <div class="cover"><img src="img/cover2.webp" alt="Fractures single artwork"></div>
+          <div class="cover"><img loading="lazy" decoding="async" src="img/cover2.webp" alt="Fractures album artwork"></div>
         </div>
       </div>
       <div class="rel-b">
-        <span class="mono">Oct 03, 2026</span>
+        <span class="mono">Oct 03, 2026 &middot; Title track</span>
         <h3 class="disp grunge rv">Fractures</h3>
         <p>A collision of chaos and clarity. &ldquo;Fractures&rdquo; explores what remains when two different worlds create something new.</p>
         <div class="player" id="player">
           <div class="player-top">
-            <button class="pbtn" id="pbtn" aria-label="Play preview"><svg class="i-play"><use href="#tri"/></svg><svg class="i-pause"><use href="#pause"/></svg></button>
-            <div class="wave" id="wave" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="226" aria-valuenow="137" tabindex="0"></div>
+            <button class="pbtn" id="pbtn" aria-label="Play Fractures"><svg class="i-play"><use href="#tri"/></svg><svg class="i-pause"><use href="#pause"/></svg></button>
+            <div class="wave" id="wave" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="162" aria-valuenow="0" tabindex="0"></div>
           </div>
-          <div class="times"><span id="tCur">2:17</span><span>3:46</span></div>
+          <div class="times"><span id="tCur">0:00</span><span id="tDur">2:42</span></div>
         </div>
         <div class="platforms">
           <a class="plat" href="https://open.spotify.com" target="_blank" rel="noopener"><svg><use href="#sp"/></svg><span>Spotify</span><svg class="arr"><use href="#chev"/></svg></a>
@@ -841,9 +1164,24 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
         </div>
       </div>
       <div class="rel-c rv-img">
-        <div class="frame" style="position:absolute;inset:0;border:0"><img src="img/shatter.webp" style="object-position:50% 30%" alt="Vocalist reaching through shattered glass in red and blue light"></div>
+        <div class="frame" style="position:absolute;inset:0;border:0"><img loading="lazy" decoding="async" src="img/shatter.webp" style="object-position:50% 30%" alt="Vocalist reaching through shattered glass in red and blue light"></div>
         <div class="out-now"><span>OUT NOW</span><i></i></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 DISCOGRAPHY ============ -->
+<section class="disco" id="discography">
+  <div class="wrap disco-grid">
+    <div class="copy">
+      <div class="sec-no rv"><b>03</b><i></i></div>
+      <h2 class="disp rv">Disco<br><span class="red">graphy</span></h2>
+      <p class="small-caps rv">Different chapters.<br>Same frequency.</p>
+    </div>
+    <div>
+      <div class="disco-cards" id="discoCards"></div>
+      <div class="ddetail" id="discoDetail" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -852,17 +1190,17 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <section class="worlds" id="about">
   <div class="wrap worlds-grid">
     <div class="copy">
-      <div class="sec-no rv"><b>03</b><i></i></div>
+      <div class="sec-no rv"><b>04</b><i></i></div>
       <h2 class="disp rv">Two<br>Worlds<br><span class="red">Same<br>Frequency</span></h2>
       <p class="small-caps rv">Different generations.<br>Different perspectives.<br>One sound.</p>
       <button class="link-arrow duo-btn" id="duoMore" aria-expanded="false" aria-controls="duoStory" data-more="More about the duo"><span>More about the duo</span><svg><use href="#arrow"/></svg></button>
     </div>
     <div class="rv">
       <div class="split" id="split" aria-label="Her and him, alternating">
-        <img class="her-l" src="img/w_her.webp" alt="Vocalist singing on a blue-lit stage">
-        <img class="him-l" src="img/w_him2.webp" alt="Drummer playing on a red-lit stage">
+        <img loading="lazy" decoding="async" class="her-l" src="img/w_her.webp" alt="Vocalist singing on a blue-lit stage">
+        <img loading="lazy" decoding="async" class="him-l" src="img/w_him2.webp" alt="Drummer playing on a red-lit stage">
       </div>
-      <div class="together tilt"><div class="frame"><img src="img/duo5.webp" alt="Drummer in red and vocalist in blue performing together on stage"></div></div>
+      <div class="together tilt"><div class="frame"><img loading="lazy" decoding="async" src="img/duo5.webp" alt="Drummer in red and vocalist in blue performing together on stage"></div></div>
     </div>
     <ul class="keywords">
       <li>Emotion</li><li>Impulse</li><li>Control</li><li>Chaos</li><li>Structure</li>
@@ -879,28 +1217,23 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <section class="members">
   <div class="wrap">
     <article class="member her-block" id="her">
-      <div class="bgimg" aria-hidden="true"><img src="img/bg_her.webp" alt=""></div>
+      <div class="bgimg" aria-hidden="true"><img loading="lazy" decoding="async" src="img/bg_her.webp" alt=""></div>
       <div class="txt">
-        <div class="sec-no rv"><b>04</b><i></i></div>
+        <div class="sec-no rv"><b>05</b><i></i></div>
         <h2 class="disp rv">Voice<br><span class="red">Chaos</span><br>Movement</h2>
         <div class="mono roles rv">Vocals<br>Lyrics</div>
         <div class="alias"><b class="disp">X-LIZA</b><span>Elizabeth Voss</span></div>
         <button class="link-arrow duo-btn" id="herMore" aria-expanded="false" aria-controls="herStory" data-more="Explore her story"><span>Explore her story</span><svg><use href="#arrow"/></svg></button>
       </div>
-      <div class="main rv-img tilt"><div class="frame"><img src="img/v_main2.webp" style="object-position:50% 30%" alt="Vocalist portrait with a red light line across her face"></div></div>
+      <div class="main rv-img tilt"><div class="frame"><img loading="lazy" decoding="async" src="img/v_main2.webp" style="object-position:50% 30%" alt="Vocalist portrait with a red light line across her face"></div></div>
       <div class="smalls">
-        <div class="frame px rv-img"><img src="img/v_top3.webp" style="object-position:50% 20%" alt="Vocalist posing with arms raised in red and blue haze"></div>
-        <div class="frame px-r rv-img"><img src="img/v_bot2.webp" style="object-position:30% 55%" alt="Vocalist sitting on a blue-lit floor"></div>
+        <div class="frame px rv-img"><img loading="lazy" decoding="async" src="img/v_top3.webp" style="object-position:50% 20%" alt="Vocalist posing with arms raised in red and blue haze"></div>
+        <div class="frame px-r rv-img"><img loading="lazy" decoding="async" src="img/v_bot2.webp" style="object-position:30% 55%" alt="Vocalist sitting on a blue-lit floor"></div>
       </div>
       <div class="aside">
         <div class="stack"><span class="dash"></span><div class="mono roles" style="margin:14px 0">Raw<br>Sensitive<br>Unpredictable<br>Real</div><span class="dash"></span></div>
-        <div class="play-row" style="flex-direction:column;align-items:flex-start;gap:16px">
-          <button class="play magnetic" data-video="v_top" data-title="Her — Studio session" data-dur="2:41" data-label="PLAY" aria-label="Watch her intro"><svg><use href="#tri"/></svg></button>
-          <span class="mono" style="line-height:1.6">Watch<br>intro</span>
-        </div>
-        <span></span>
       </div>
-      <div class="crowd rv-img"><div class="frame"><img src="img/v_crowd3.webp" alt="Vocalist with arms spread facing the crowd"></div></div>
+      <div class="crowd rv-img"><div class="frame"><img loading="lazy" decoding="async" src="img/v_crowd3.webp" alt="Vocalist with arms spread facing the crowd"></div></div>
     
       <div class="duo-story member-story" id="herStory" aria-hidden="true"><div class="duo-inner">
         <div class="bio-head"><span class="bio-name">Elizabeth Voss</span><span class="bio-roles">Vocals / Lyrics / Visual Direction</span></div>
@@ -912,18 +1245,14 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
       <div class="bgimg" aria-hidden="true"><img src="img/bg_him.webp" alt=""></div>
       <div class="left">
         <div class="stack"><span class="dash"></span><div class="mono roles" style="margin:14px 0">Structure<br>Experience<br>Perspective<br>Balance</div><span class="dash"></span></div>
-        <div class="play-row">
-          <button class="play magnetic" data-video="r_drum" data-title="His setup — Drum walkthrough" data-dur="4:05" data-label="PLAY" aria-label="Listen to his setup"><svg><use href="#tri"/></svg></button>
-          <span class="mono" style="line-height:1.6">Listen<br>his setup</span>
-        </div>
       </div>
-      <div class="main rv-img tilt"><div class="frame"><img src="img/r_him2.webp" style="object-position:50% 35%" alt="Close-up portrait of the drummer in red light"></div></div>
+      <div class="main rv-img tilt"><div class="frame"><img loading="lazy" decoding="async" src="img/r_him2.webp" style="object-position:50% 35%" alt="Close-up portrait of the drummer in red light"></div></div>
       <div class="right">
         <h2 class="disp rv">Rhythm<br><span class="red">Control</span><br><span class="grunge">Depth</span></h2>
         <div class="mono roles rv">Drums<br>Production</div>
         <div class="alias"><b class="disp">Jack Gun</b><span>Jonathan Mercer</span></div>
         <button class="link-arrow duo-btn" id="himMore" aria-expanded="false" aria-controls="himStory" data-more="Explore his story"><span>Explore his story</span><svg><use href="#arrow"/></svg></button>
-        <div class="drum px rv-img"><div class="frame"><img src="img/r_drum4.webp" style="object-position:50% 30%" alt="Drummer playing his kit in red smoke"></div></div>
+        <div class="drum px rv-img"><div class="frame"><img loading="lazy" decoding="async" src="img/r_drum4.webp" style="object-position:50% 30%" alt="Drummer playing his kit in red smoke"></div></div>
       </div>
       <div class="rail"><span class="neon-bar"></span></div>
     
@@ -939,30 +1268,30 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <section class="video" id="media">
   <div class="wrap video-grid">
     <div class="copy">
-      <div class="sec-no rv"><b>05</b><i></i></div>
+      <div class="sec-no rv"><b>06</b><i></i></div>
       <h2 class="disp rv">Video /<br><span class="red">Clips</span></h2>
       <p class="small-caps rv">Music videos, live sessions<br>and visual experiments.</p>
       <span class="dash"></span>
-      <a class="link-arrow" href="#media"><span>Explore videos</span><svg><use href="#arrow"/></svg></a>
+      <a class="link-arrow" href="#videos"><span>Explore videos</span><svg><use href="#arrow"/></svg></a>
     </div>
     <div>
-      <button class="feat rv-img" id="feat" data-video="vid_feat" data-title="Fractures — Official music video" data-dur="4:42" data-label="PLAY" aria-label="Play featured video">
-        <span class="frame" style="display:block"><img id="featImg" src="img/vid_feat.webp" alt="Vocalist behind a rain-streaked window in red and blue light"></span>
+      <button class="feat rv-img" id="feat" aria-label="Play Fractures">
+        <span class="frame" style="display:block"><img loading="lazy" decoding="async" id="featImg" src="img/vid_feat.webp" alt="Vocalist behind a rain-streaked window in red and blue light"></span>
         <span class="shade"></span>
         <span class="meta" id="featMeta">Featured video<br>Official music video</span>
-        <span class="dur" id="featDur">04:42</span>
+        <span class="dur" id="featDur" data-vdur="0">--:--</span>
       </button>
       <div class="thumbs">
-        <button class="thumb is-active" data-src="img/vid_feat.webp" data-kind="Official music video" data-name="Fractures — Official music video" data-dur="04:42" data-label="SWAP">
-          <span class="frame"><img src="img/vid_feat.webp" alt="Vocalist behind a rain-streaked window"><span class="td">04:42</span></span>
+        <button class="thumb is-active" data-vid="0" aria-label="Show Fractures official video">
+          <span class="frame"><img loading="lazy" decoding="async" src="img/vid_feat.webp" alt="Vocalist behind a rain-streaked window"><span class="td" data-vdur="0">--:--</span></span>
           <span class="cap">Official video<i></i></span>
         </button>
-        <button class="thumb" data-src="img/vid_crowd.webp" data-kind="Live session" data-name="Fractures — Live at The Wiltern" data-dur="03:15" data-label="SWAP">
-          <span class="frame"><img src="img/vid_crowd.webp" alt="Crowd with raised hands under red light"><span class="td">03:15</span></span>
+        <button class="thumb" data-vid="1" aria-label="Show live session">
+          <span class="frame"><img loading="lazy" decoding="async" src="img/vid_crowd.webp" alt="Crowd with raised hands under red light"><span class="td" data-vdur="1">--:--</span></span>
           <span class="cap">Live session<i></i></span>
         </button>
-        <button class="thumb" data-src="img/vid_arch.webp" data-kind="Concert film" data-name="Blue Arch — Concert film" data-dur="01:56" data-label="SWAP">
-          <span class="frame"><img src="img/vid_arch.webp" alt="Band on a stage with a glowing blue arch"><span class="td">01:56</span></span>
+        <button class="thumb" data-vid="2" aria-label="Show concert film">
+          <span class="frame"><img loading="lazy" decoding="async" src="img/vid_arch.webp" alt="Band on a stage with a glowing blue arch"><span class="td" data-vdur="2">--:--</span></span>
           <span class="cap">Concert film<i></i></span>
         </button>
       </div>
@@ -975,39 +1304,32 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <section class="gallery" id="gallery">
   <div class="wrap gal-grid">
     <div class="copy">
-      <div class="sec-no rv"><b>06</b><i></i></div>
+      <div class="sec-no rv"><b>07</b><i></i></div>
       <h2 class="disp grunge rv">Gallery</h2>
       <span class="dash"></span>
       <p class="small-caps rv">A visual archive of songs,<br>places and in-between<br>moments.</p>
-      <div class="filters" id="galFilters" role="group" aria-label="Filter gallery">
-        <button aria-pressed="true" data-f="all">All</button>
-        <button aria-pressed="false" data-f="live">Live</button>
-        <button aria-pressed="false" data-f="backstage">Backstage</button>
-        <button aria-pressed="false" data-f="portraits">Portraits</button>
-        <button aria-pressed="false" data-f="editorial">Editorial</button>
-        <button aria-pressed="false" data-f="stills">Stills</button>
-      </div>
-      <a class="link-arrow" href="#gallery" id="openArchive"><span>Open archive</span><svg><use href="#arrow"/></svg></a>
+      <div class="filters" id="galFilters" role="group" aria-label="Filter gallery"></div>
+      <a class="link-arrow" href="#archive" id="openArchive"><span>Open archive</span><svg><use href="#arrow"/></svg></a>
     </div>
     <div class="mosaic" id="mosaic">
       <div class="side-words">Moments<br>People<br>Places<br>Sounds</div>
-      <button class="tile t-live rv-img" data-c="live" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_live2.webp" style="object-position:50% 40%" alt="Duo on a leather sofa under red light"></span></button>
-      <button class="tile t-port rv-img" data-c="portraits" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_port.webp" style="object-position:50% 30%" alt="Signal / Saints poster, red and blue halves"></span></button>
-      <button class="tile t-back rv-img" data-c="backstage" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_back.webp" style="object-position:50% 30%" alt="Duo posing together in a blue spotlight"></span></button>
-      <button class="tile t-edit rv-img" data-c="editorial" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_edit.webp" style="object-position:50% 50%" alt="Bassist and drummer on a smoky blue stage"></span></button>
-      <button class="tile t-still rv-img" data-c="stills" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_still.webp" style="object-position:50% 30%" alt="Vocalist with a red laser line across her eyes"></span></button>
-      <button class="tile t-boot rv-img" data-c="stills" data-label="VIEW"><span class="frame" style="display:block"><img src="img/gn_boot.webp" style="object-position:50% 25%" alt="Duo standing in red light, smoke and a rose"></span></button>
+      <button class="tile t-live rv-img" data-c="editorial"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_live2.webp" style="object-position:50% 40%" alt="Duo on a leather sofa under red light"></span></button>
+      <button class="tile t-port rv-img" data-c="editorial"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_port.webp" style="object-position:50% 30%" alt="Signal / Saints poster, red and blue halves"></span></button>
+      <button class="tile t-back rv-img" data-c="portraits"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_back.webp" style="object-position:50% 30%" alt="Duo posing together in a blue spotlight"></span></button>
+      <button class="tile t-edit rv-img" data-c="live"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_edit.webp" style="object-position:50% 50%" alt="Bassist and drummer on a smoky blue stage"></span></button>
+      <button class="tile t-still rv-img" data-c="portraits"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_still.webp" style="object-position:50% 30%" alt="Vocalist with a red laser line across her eyes"></span></button>
+      <button class="tile t-boot rv-img" data-c="editorial"><span class="frame" style="display:block"><img loading="lazy" decoding="async" src="img/gn_boot.webp" style="object-position:50% 25%" alt="Duo standing in red light, smoke and a rose"></span></button>
     </div>
   </div>
 </section>
 
 <!-- ============ 07 TOUR ============ -->
 <section class="tour" id="tour">
-  <div class="bgimg" aria-hidden="true"><img src="img/bg_tour.webp" alt=""></div>
+  <div class="bgimg" aria-hidden="true"><img loading="lazy" decoding="async" src="img/bg_tour.webp" alt=""></div>
   <div class="wrap">
     <div class="tour-head">
       <div class="copy">
-        <div class="sec-no rv"><b>07</b><i></i></div>
+        <div class="sec-no rv"><b>08</b><i></i></div>
         <h2 class="disp rv">Tour<br><span class="red">Dates</span></h2>
         <p class="small-caps rv">Live shows.<br>New cities.<br>Same people.</p>
         <div class="countdown" id="countdown" aria-live="off">
@@ -1016,27 +1338,18 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
           <div class="cd"><b id="cdM">00</b><span>Min</span></div>
           <div class="cd"><b id="cdS">00</b><span>Sec</span></div>
         </div>
-        <span class="mono" style="color:var(--mute);letter-spacing:.16em">Until opening night &middot; Los Angeles</span>
+        <span class="mono" id="cdLabel" style="letter-spacing:.16em">Until next show</span>
       </div>
       <div class="tour-img rv-img">
-        <div class="frame"><img src="img/tour2.webp" style="object-position:50% 30%" alt="Band live on stage in red and blue light with the crowd in front"></div>
+        <div class="frame"><img loading="lazy" decoding="async" src="img/tour2.webp" style="object-position:50% 30%" alt="Band live on stage in red and blue light with the crowd in front"></div>
         <div class="meta"><span>Live around<br>the world</span><span>2026 &mdash; 2027</span></div>
       </div>
     </div>
 
-    <div class="dates" id="dates">
-      <div class="row" data-img="img/g_live.webp"><span class="d">Nov 14</span><span>Los Angeles, CA</span><span class="v">The Wiltern</span><span class="chip">Few left</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/t1.webp"><span class="d">Nov 18</span><span>New York, NY</span><span class="v">Brooklyn Steel</span><span class="chip blank">—</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/banner.webp"><span class="d">Nov 22</span><span>Toronto, ON</span><span class="v">History</span><span class="chip blank">—</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/duo.webp"><span class="d">Nov 27</span><span>Chicago, IL</span><span class="v">Riviera Theatre</span><span class="chip">Sold out</span><span class="tix sold">Sold out</span></div>
-      <div class="row" data-img="img/tour.webp"><span class="d">Dec 02</span><span>London, UK</span><span class="v">O2 Forum</span><span class="chip">Few left</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/g_back.webp"><span class="d">Dec 05</span><span>Berlin, DE</span><span class="v">Columbiahalle</span><span class="chip blank">—</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/v_crowd.webp"><span class="d">Dec 11</span><span>Paris, FR</span><span class="v">Le Trianon</span><span class="chip blank">—</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-      <div class="row" data-img="img/city.webp"><span class="d">Dec 18</span><span>Tokyo, JP</span><span class="v">Zepp Shinjuku</span><span class="chip blank">—</span><a class="tix" href="#tour" data-tix>Tickets<svg><use href="#arrow"/></svg></a></div>
-    </div>
+    <div class="dates" id="dates"></div>
 
     <div class="tour-foot">
-      <a class="link-arrow" href="#tour"><span>View all dates</span><svg><use href="#arrow"/></svg></a>
+      <button class="link-arrow" id="moreDates" aria-expanded="false" aria-controls="moreRows"><span>View all dates</span><svg><use href="#arrow"/></svg></button>
     </div>
   </div>
 </section>
@@ -1045,28 +1358,44 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
 <section class="merch" id="merch">
   <div class="wrap merch-grid">
     <div class="copy">
-      <div class="sec-no rv"><b>08</b><i></i></div>
+      <div class="sec-no rv"><b>09</b><i></i></div>
       <h2 class="disp grunge rv">Merch</h2>
-      <p class="small-caps rv">Music lives on<br>beyond the stage.</p>
+      <p class="small-caps rv">Music lives on<br>beyond the stage.<br>A few picks from the shop.</p>
       <span class="dash"></span>
-      <div class="filters" id="merchFilters" role="group" aria-label="Filter merch">
-        <button aria-pressed="true" data-f="all">All</button>
-        <button aria-pressed="false" data-f="apparel">Apparel</button>
-        <button aria-pressed="false" data-f="music">Music</button>
-        <button aria-pressed="false" data-f="prints">Prints</button>
-        <button aria-pressed="false" data-f="accessories">Accessories</button>
-      </div>
-      <a class="link-arrow" href="#merch"><span>View all merch</span><svg><use href="#arrow"/></svg></a>
+      <a class="link-arrow" href="#shop"><span>View all merch</span><svg><use href="#arrow"/></svg></a>
     </div>
-    <div class="products" id="products">
-      <article class="prod rv" data-c="apparel"><div class="frame tilt"><img src="img/m_tee2.webp" style="object-position:50% 50%" alt="Black tee with duo artwork"><span class="num">01<br>T-shirt</span><button class="add" data-name="Fractures Tee">Add to cart &middot; $35</button></div><div class="info"><span>Fractures Tee<i></i></span><span>$35</span></div></article>
-      <article class="prod rv" data-c="apparel"><div class="frame tilt"><img src="img/m_hood2.webp" style="object-position:50% 50%" alt="Black hoodie with red sun print"><span class="num">02<br>Hoodie</span><button class="add" data-name="Circle Hoodie">Add to cart &middot; $65</button></div><div class="info"><span>Circle Hoodie<i></i></span><span>$65</span></div></article>
-      <article class="prod rv" data-c="prints"><div class="frame tilt"><img src="img/m_post2.webp" style="object-position:50% 50%" alt="Framed poster with duo artwork"><span class="num">03<br>Poster</span><button class="add" data-name="Horizon Poster">Add to cart &middot; $20</button></div><div class="info"><span>Horizon Poster<i></i></span><span>$20</span></div></article>
-      <article class="prod rv" data-c="music"><div class="frame tilt"><img src="img/m_vin2.webp" style="object-position:50% 50%" alt="Red marbled vinyl with sleeve"><span class="num">04<br>Vinyl</span><button class="add" data-name="Fractures Vinyl">Add to cart &middot; $30</button></div><div class="info"><span>Fractures Vinyl<i></i></span><span>$30</span></div></article>
-      <div class="empty" id="empty" hidden>Accessories drop with the tour. Join the list below to hear first.</div>
-    </div>
+    <div class="products" id="products"></div>
   </div>
 </section>
+</main>
+
+<!-- ============ PAGE: ARCHIVE ============ -->
+<main class="view page" id="view-archive" hidden>
+  <div class="wrap">
+    <a class="back-home" href="#gallery"><svg><use href="#chev"/></svg>Homepage</a>
+    <div class="page-head"><h1 class="disp">Gallery <span class="red">archive</span></h1><p>Live shows, portraits and stills from the Fractures era. <span id="archCount"></span></p></div>
+    <div class="pfilters" id="archFilters" role="group" aria-label="Filter photos"></div>
+    <div class="arch" id="archGrid"></div>
+  </div>
+</main>
+
+<!-- ============ PAGE: VIDEOS ============ -->
+<main class="view page" id="view-videos" hidden>
+  <div class="wrap">
+    <a class="back-home" href="#media"><svg><use href="#chev"/></svg>Homepage</a>
+    <div class="page-head"><h1 class="disp">Video <span class="red">/ clips</span></h1><p>Music videos, live sessions and concert films. Playing a video pauses the song.</p></div>
+    <div class="vlist" id="vidList"></div>
+  </div>
+</main>
+
+<!-- ============ PAGE: SHOP ============ -->
+<main class="view page" id="view-shop" hidden>
+  <div class="wrap">
+    <a class="back-home" href="#merch"><svg><use href="#chev"/></svg>Homepage</a>
+    <div class="page-head"><h1 class="disp">Merch <span class="red">shop</span></h1><p>Blood Moon tour collection, records and prints. Demo shop: no payment is taken.</p></div>
+    <div class="pfilters" id="shopFilters" role="group" aria-label="Filter products"></div>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
 </main>
 
 <footer>
@@ -1077,7 +1406,7 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
         <p class="mono" style="margin:18px 0 0;line-height:1.9;color:var(--soft)">Music for<br>brighter places.</p>
       </div>
       <div>
-        <nav aria-label="Footer"><a href="#home">Home</a><a href="#music">Release</a><a href="#about">About</a><a href="#her">Band</a><a href="#media">Videos</a><a href="#gallery">Gallery</a><a href="#tour">Tour dates</a><a href="#merch">Merch</a></nav>
+        <nav aria-label="Footer"><a href="#home">Home</a><a href="#music">Music</a><a href="#discography">Discography</a><a href="#about">About</a><a href="#her">Band</a><a href="#media">Videos</a><a href="#gallery">Gallery</a><a href="#tour">Tour dates</a><a href="#merch">Merch</a></nav>
       </div>
       <div>
         <dl>
@@ -1107,18 +1436,46 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
   </div>
 </footer>
 
-<!-- modal: video preview + gallery lightbox -->
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Media viewer">
-  <div class="modal-box">
-    <button class="mclose" id="mclose" aria-label="Close"><svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
-    <div class="modal-media"><img id="mImg" src="img/feat.webp" alt=""></div>
-    <div class="modal-bar">
-      <button class="pbtn mtoggle" id="mToggle" aria-label="Pause" style="--s:38px"><svg class="i-play"><use href="#tri"/></svg><svg class="i-pause"><use href="#pause"/></svg></button>
-      <span class="mtitle" id="mTitle">Fractures</span>
-      <span class="track"><i id="mTrack"></i></span>
-      <span class="t" id="mTime">0:00 / 4:42</span>
-      <div class="gnav"><button id="gPrev" aria-label="Previous image">Prev</button><button id="gNext" aria-label="Next image">Next</button></div>
-    </div>
+<!-- overlays -->
+<div class="mini" id="mini" hidden aria-label="Now playing">
+  <button class="pbtn" id="miniPlay" aria-label="Play Fractures"><svg class="i-play"><use href="#tri"/></svg><svg class="i-pause"><use href="#pause"/></svg></button>
+  <img loading="lazy" decoding="async" src="img/cover2.webp" alt="">
+  <div class="mini-t"><b>Fractures</b><span id="miniTime">0:00 / 2:42</span></div>
+  <a href="#music">Player</a>
+  <i class="bar" id="miniBar"></i>
+</div>
+
+<div class="ov lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top"><span id="lbCount">01 / 01</span><span id="lbCat"></span><button class="ov-x" data-close aria-label="Close photo viewer"><svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg></button></div>
+  <div class="lb-stage"><button class="lb-nav prev" id="lbPrev" aria-label="Previous photo"><svg><use href="#chev"/></svg></button><img id="lbImg" alt=""><button class="lb-nav next" id="lbNext" aria-label="Next photo"><svg><use href="#chev"/></svg></button></div>
+</div>
+
+<div class="ov" id="vm" hidden role="dialog" aria-modal="true" aria-labelledby="vmTitle">
+  <div class="ov-box vm-box">
+    <button class="ov-x" data-close aria-label="Close video"><svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+    <video id="vmVideo" controls playsinline preload="none"></video>
+    <div class="vm-meta"><b id="vmTitle">Video</b><span id="vmInfo"></span></div>
+  </div>
+</div>
+
+<div class="ov" id="pm" hidden role="dialog" aria-modal="true" aria-label="Product">
+  <div class="ov-box pm-box" id="pmBox"></div>
+</div>
+
+<div class="ov" id="tm" hidden role="dialog" aria-modal="true" aria-label="Tickets">
+  <div class="ov-box tm-box">
+    <button class="ov-x" data-close aria-label="Close tickets"><svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+    <div class="tm-media"><img id="tmImg" src="img/tour2.webp" alt=""><span class="chip" id="tmChip">On sale</span></div>
+    <div class="tm-body" id="tmBody"></div>
+  </div>
+</div>
+
+<div class="ov cd" id="cd" hidden role="dialog" aria-modal="true" aria-labelledby="cdTitle">
+  <div class="ov-box cd-box">
+    <div class="cd-head"><h3 id="cdTitle">Cart</h3></div>
+    <button class="ov-x" data-close aria-label="Close cart"><svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg></button>
+    <div class="cd-body" id="cdBody"></div>
+    <div class="cd-foot" id="cdFoot"></div>
   </div>
 </div>
 <div class="toast" id="toast" role="status"><b></b><span id="toastT">Added</span></div>
@@ -1165,7 +1522,9 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
     if (d < -4) nav.classList.remove('is-hidden');
     lastY = y;
     let cur = null;
-    secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = links[i]; });
+    const v = document.body.dataset.view;
+    if (v && v !== 'home') cur = links.find(a => a.dataset.view === v) || null;
+    else secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = links[i]; });
     links.forEach(a => a.classList.toggle('is-active', a === cur));
     moveInd(cur);
     ticking = false;
@@ -1268,21 +1627,6 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
     }
   });
 
-  /* ---- smooth in-page anchors (only on real clicks) ---- */
-  $$('a[href^="#"]:not([href="#home"])').forEach(a => a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1); const t = id && document.getElementById(id);
-    if (!t || a.hasAttribute('data-tix') || a.id === 'openArchive') return;
-    e.preventDefault();
-    scrollTo({ top: t.getBoundingClientRect().top + scrollY - 70, behavior: reduce ? 'auto' : 'smooth' });
-  }));
-
-  /* ---- HOME links go to the very top ---- */
-  $$('a[href="#home"]').forEach(a => a.addEventListener('click', e => {
-    e.preventDefault();
-    nav.classList.remove('is-hidden');
-    scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
-  }));
-
   /* ---- expandable stories ---- */
   $$('.duo-btn').forEach(btn => {
     const box = document.getElementById(btn.getAttribute('aria-controls'));
@@ -1329,185 +1673,649 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
   }
   requestAnimationFrame(loop);
 
-  /* ---- single player: waveform with fake playback ---- */
-  const wave = $('#wave'), player = $('#player'), tCur = $('#tCur'), coverWrap = $('#coverWrap');
-  const BARS = innerWidth < 640 ? 60 : 84, DUR = 226;
-  let pos = 137, playing = false, lastT = 0;
-  const seed = i => (Math.sin(i * 12.9898) * 43758.5453) % 1;
+  /* ================= v2: shared helpers ================= */
+  const fmt = s => { s = Math.max(0, Math.floor(s || 0)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+  const pad = n => String(n).padStart(2, '0');
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const money = n => '$' + (Math.round(n * 100) / 100).toFixed(n % 1 ? 2 : 0);
+  const ARROW = '<svg><use href="#arrow"/></svg>';
+  const CLOSE = '<svg viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13"/></svg>';
+  const CHECK = '<svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>';
+  const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  let toastTimer;
+  const toast = (msg, kind) => {
+    const t = $('#toast'); $('#toastT').textContent = msg; t.classList.toggle('err', kind === 'err'); t.classList.add('on');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2800);
+  };
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (_) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) {} }
+  };
+  const scrollToEl = (el, smooth = true) => { if (!el) return; nav.classList.remove('is-hidden'); scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + scrollY - 70), behavior: smooth && !reduce ? 'smooth' : 'auto' }); };
+
+  /* ================= overlays (modal manager) ================= */
+  const stack = [];
+  function openOv(el, focusSel) {
+    if (!stack.includes(el)) stack.push(el);
+    el.__last = el.__last || document.activeElement;
+    el.hidden = false; void el.offsetWidth; el.classList.add('open');
+    document.documentElement.classList.add('locked');
+    setTimeout(() => { const f = el.querySelector(focusSel || '.ov-x'); f && f.focus({ preventScroll: true }); }, 80);
+  }
+  function closeOv(el) {
+    if (!el || !stack.includes(el)) return;
+    el.classList.remove('open');
+    stack.splice(stack.indexOf(el), 1);
+    if (!stack.length) document.documentElement.classList.remove('locked');
+    const last = el.__last; el.__last = null;
+    el.dispatchEvent(new Event('ovclose'));
+    setTimeout(() => { if (!el.classList.contains('open')) el.hidden = true; }, 360);
+    if (last && last.focus && document.contains(last)) last.focus({ preventScroll: true });
+  }
+  document.addEventListener('click', e => {
+    const c = e.target.closest('[data-close]');
+    if (c) { closeOv(c.closest('.ov')); return; }
+    if (e.target.classList && e.target.classList.contains('ov')) closeOv(e.target);
+  });
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (stack.length) { e.preventDefault(); closeOv(stack[stack.length - 1]); }
+      else if (menu.classList.contains('is-open')) setMenu(false);
+      return;
+    }
+    if (e.key === 'Tab' && stack.length) {
+      const ov = stack[stack.length - 1];
+      const f = [...ov.querySelectorAll('button,a[href],input,select,textarea,video,[tabindex]:not([tabindex="-1"])')].filter(x => !x.disabled && x.getClientRects().length);
+      if (!f.length) return;
+      const a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+
+  /* ================= views (single page, so music never stops) ================= */
+  const VIEWS = ['archive', 'videos', 'shop'];
+  let view = 'home';
+  function showView(v) {
+    if (v === view) return false;
+    view = v; document.body.dataset.view = v;
+    $$('.view').forEach(el => el.hidden = el.id !== 'view-' + v);
+    if (v === 'archive') renderArchive();
+    if (v === 'shop') renderShop();
+    document.title = v === 'home' ? 'Signal / Saints' : `${{ archive: 'Archive', videos: 'Videos', shop: 'Shop' }[v]} · Signal / Saints`;
+    updateMini(); onScroll();
+    return true;
+  }
+  function route(smooth) {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (VIEWS.includes(h)) { showView(h); scrollTo({ top: 0 }); return; }
+    const changed = showView('home');
+    if (h && h !== 'home') { const t = document.getElementById(h); if (t) requestAnimationFrame(() => scrollToEl(t, smooth && !changed)); }
+    else if (changed) scrollTo({ top: 0 });
+  }
+  function go(id) {
+    if (VIEWS.includes(id)) {
+      if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+      route(); return;
+    }
+    if (view !== 'home') { history.pushState(null, '', id === 'home' ? location.pathname + location.search : '#' + id); showView('home'); scrollTo({ top: 0 }); }
+    if (id === 'home') { nav.classList.remove('is-hidden'); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); return; }
+    requestAnimationFrame(() => scrollToEl(document.getElementById(id)));
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    if (a.hasAttribute('data-listen')) return;
+    if (!VIEWS.includes(id) && id !== 'home' && !document.getElementById(id)) return;
+    e.preventDefault();
+    const inOv = a.closest('.ov'); if (inOv) closeOv(inOv);
+    go(id);
+  });
+  addEventListener('popstate', () => route(false));
+  addEventListener('hashchange', () => route(false));
+
+  /* ================= audio: Fractures (real file) ================= */
+  const WAVE = [0.42, 0.64, 0.67, 0.71, 0.56, 0.74, 0.49, 0.61, 0.64, 0.64, 0.77, 0.54, 0.67, 0.54, 0.74, 0.7, 0.66, 0.74, 0.84, 1.0, 0.72, 0.87, 0.79, 0.73, 0.8, 0.71, 0.88, 0.88, 0.83, 0.38, 0.41, 0.41, 0.28, 0.6, 0.7, 0.63, 0.79, 0.41, 0.82, 0.69, 0.63, 0.8, 0.65, 0.78, 0.54, 0.57, 0.73, 0.6, 0.79, 0.44, 0.74, 0.94, 0.67, 0.75, 0.89, 0.69, 0.75, 0.86, 0.67, 0.87, 0.71, 0.57, 0.9, 0.59, 0.69, 0.83, 0.52, 0.86, 0.57, 0.74, 0.57, 0.67, 0.77, 0.7, 0.85, 0.43, 0.85, 0.69, 0.73, 0.81, 0.76, 0.08, 0.06, 0.06];
+  const audio = new Audio();
+  audio.preload = 'metadata';
+  audio.src = 'media/fractures.mp3';
+  let dur = 161.75, started = false;
+  const wave = $('#wave'), player = $('#player'), tCur = $('#tCur'), tDur = $('#tDur'), coverWrap = $('#coverWrap'), pbtn = $('#pbtn');
+  const BARS = innerWidth < 640 ? 56 : 84;
   for (let i = 0; i < BARS; i++) {
     const b = document.createElement('i');
-    const env = .35 + .65 * Math.sin(Math.PI * i / BARS) ** .6;
-    b.style.height = Math.max(10, Math.abs(seed(i)) * 100 * env) + '%';
+    b.style.height = Math.max(8, WAVE[Math.floor(i * WAVE.length / BARS)] * 100) + '%';
     wave.appendChild(b);
   }
   const bars = $$('i', wave);
-  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
-  function paint() {
-    const k = Math.round(pos / DUR * BARS);
+  const mini = $('#mini');
+  let relVisible = true;
+  new IntersectionObserver(([en]) => { relVisible = en.isIntersecting; updateMini(); }, { threshold: .15 }).observe(player);
+  function updateMini() {
+    const show = started && !(audio.paused && audio.currentTime === 0) && !(view === 'home' && relVisible);
+    mini.hidden = !show;
+  }
+  function syncUI() {
+    const t = audio.currentTime || 0, playing = !audio.paused, k = Math.round(t / dur * BARS);
     bars.forEach((b, i) => b.classList.toggle('on', i < k));
-    tCur.textContent = fmt(pos); wave.setAttribute('aria-valuenow', Math.round(pos));
+    tCur.textContent = fmt(t); tDur.textContent = fmt(dur);
+    wave.setAttribute('aria-valuemax', Math.round(dur)); wave.setAttribute('aria-valuenow', Math.round(t));
+    wave.setAttribute('aria-valuetext', `${fmt(t)} of ${fmt(dur)}`);
+    player.classList.toggle('is-playing', playing); coverWrap.classList.toggle('is-playing', playing); mini.classList.toggle('is-playing', playing);
+    pbtn.setAttribute('aria-label', playing ? 'Pause Fractures' : 'Play Fractures');
+    $('#miniPlay').setAttribute('aria-label', playing ? 'Pause Fractures' : 'Play Fractures');
+    $$('[data-track-play]').forEach(b => { b.classList.toggle('is-playing', playing); b.setAttribute('aria-label', (playing ? 'Pause ' : 'Play ') + 'Fractures'); });
+    $('#miniTime').textContent = `${fmt(t)} / ${fmt(dur)}`;
+    $('#miniBar').style.transform = `scaleX(${dur ? t / dur : 0})`;
+    updateMini();
   }
-  paint();
-  function tick(t) {
-    if (!playing) return;
-    if (lastT) pos += (t - lastT) / 1000;
-    lastT = t;
-    if (pos >= DUR) { pos = 0; }
-    paint();
-    if (!reduce) bars.forEach((b, i) => { if (b.classList.contains('on') && i > Math.round(pos / DUR * BARS) - 6) b.style.transform = `scaleY(${.7 + Math.random() * .6})`; else b.style.transform = ''; });
-    requestAnimationFrame(tick);
+  audio.addEventListener('loadedmetadata', () => { if (isFinite(audio.duration)) dur = audio.duration; syncUI(); refreshTrackDur(); });
+  ['timeupdate', 'play', 'pause', 'seeked'].forEach(ev => audio.addEventListener(ev, syncUI));
+  audio.addEventListener('ended', () => { audio.pause(); audio.currentTime = 0; syncUI(); });
+  function playSong() {
+    started = true; pauseVideo();
+    const p = audio.play();
+    if (p && p.catch) p.catch(() => toast('Press play to start the track', 'err'));
   }
-  function setPlay(p) {
-    playing = p; lastT = 0;
-    player.classList.toggle('is-playing', p);
-    coverWrap.classList.toggle('is-playing', p);
-    $('#pbtn').setAttribute('aria-label', p ? 'Pause preview' : 'Play preview');
-    if (p) requestAnimationFrame(tick); else bars.forEach(b => b.style.transform = '');
-  }
-  $('#pbtn').addEventListener('click', () => setPlay(!playing));
-  coverWrap.addEventListener('click', () => setPlay(!playing));
-  const seek = e => { const r = wave.getBoundingClientRect(); pos = clamp((e.clientX - r.left) / r.width, 0, 1) * DUR; paint(); };
-  wave.addEventListener('pointerdown', e => { seek(e); wave.setPointerCapture(e.pointerId); });
-  wave.addEventListener('pointermove', e => { if (e.buttons) seek(e); });
-  wave.addEventListener('keydown', e => { if (e.key === 'ArrowRight') pos = Math.min(DUR, pos + 5); else if (e.key === 'ArrowLeft') pos = Math.max(0, pos - 5); else if (e.key === ' ') { e.preventDefault(); setPlay(!playing); } paint(); });
+  const toggleSong = () => audio.paused ? playSong() : audio.pause();
+  pbtn.addEventListener('click', toggleSong);
+  coverWrap.addEventListener('click', toggleSong);
+  $('#miniPlay').addEventListener('click', toggleSong);
+  const seekX = x => { const r = wave.getBoundingClientRect(); audio.currentTime = clamp((x - r.left) / r.width, 0, 1) * dur; started = true; syncUI(); };
+  wave.addEventListener('pointerdown', e => { seekX(e.clientX); wave.setPointerCapture(e.pointerId); });
+  wave.addEventListener('pointermove', e => { if (e.buttons) seekX(e.clientX); });
+  wave.addEventListener('keydown', e => {
+    const k = e.key;
+    if (k === 'ArrowRight') audio.currentTime = Math.min(dur, audio.currentTime + 5);
+    else if (k === 'ArrowLeft') audio.currentTime = Math.max(0, audio.currentTime - 5);
+    else if (k === 'Home') audio.currentTime = 0;
+    else if (k === 'End') audio.currentTime = Math.max(0, dur - 1);
+    else if (k === ' ' || k === 'Enter') toggleSong();
+    else return;
+    e.preventDefault(); syncUI();
+  });
+  syncUI();
+  /* Listen now: go to release and play (continue if already playing) */
+  $$('[data-listen]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    if (view !== 'home') { history.pushState(null, '', '#music'); showView('home'); }
+    scrollToEl($('#music'));
+    if (audio.paused) playSong();
+  }));
 
-  /* ---- video: thumbs swap featured ---- */
+  /* ================= discography ================= */
+  const PLAT = [['Spotify', 'https://open.spotify.com'], ['Apple Music', 'https://music.apple.com'], ['YouTube', 'https://youtube.com']];
+  const DISCO = [
+    { id: 'fractures', title: 'Fractures', year: 2026, type: 'Album', label: 'Debut album', cover: 'img/cover2.webp',
+      desc: 'Beauty in the breakdown. Five songs about what keeps us human.',
+      tracks: [['Fractures', null, true], ['Two Worlds', '4:12'], ['Redline', '3:28'], ['Static Between Us', '4:05'], ['Same Frequency', '3:57']] },
+    { id: 'static-hearts', title: 'Static Hearts', year: 2025, type: 'EP', label: 'EP', cover: 'img/cover_static.webp',
+      desc: 'Four songs written between rehearsal rooms and night trains. Raw edges, electronic veins.',
+      tracks: [['Static Hearts', '3:51'], ['Pulse Line', '3:34'], ['Wires', '4:02'], ['Low Signal', '3:19']] },
+    { id: 'afterimage', title: 'Afterimage', year: 2024, type: 'Single', label: 'Single', cover: 'img/cover_after.webp',
+      desc: 'The first song we finished together. One room, one take, one long night in Berlin.',
+      tracks: [['Afterimage', '3:44'], ['Afterimage (Night Version)', '4:20']] }
+  ];
+  const dCards = $('#discoCards'), dDetail = $('#discoDetail');
+  dCards.innerHTML = DISCO.map((r, i) => `
+    <button class="dcard${i ? '' : ' is-active'}" data-rel="${i}" aria-pressed="${i ? 'false' : 'true'}" aria-controls="discoDetail">
+      <span class="frame"><img src="${r.cover}" alt="${esc(r.title)} cover" loading="lazy" decoding="async"></span>
+      <h3>${esc(r.title)}</h3>
+      <span class="meta"><span>${r.year}</span><span>${r.type}</span></span>
+    </button>`).join('');
+  function refreshTrackDur() { $$('[data-real-dur]').forEach(el => el.textContent = fmt(dur)); }
+  function renderRelease(i) {
+    const r = DISCO[i];
+    dDetail.innerHTML = `
+      <div class="dl">
+        <img class="dcover" src="${r.cover}" alt="${esc(r.title)} cover" loading="lazy">
+        <h3>${esc(r.title)}</h3>
+        <span class="dmeta">${r.year} &nbsp;/&nbsp; ${esc(r.label)}</span>
+        <p>${esc(r.desc)}</p>
+        <div class="dplat">${PLAT.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener">${n}${ARROW}</a>`).join('')}</div>
+      </div>
+      <ol class="tracks" aria-label="${esc(r.title)} tracklist">${r.tracks.map(([n, d, real], k) => `
+        <li class="${real ? 'has-audio' : ''}">
+          <span class="n">${pad(k + 1)}</span>
+          ${real ? `<button class="tp" data-track-play aria-label="Play Fractures"><svg class="i-play"><use href="#tri"/></svg><svg class="i-pause"><use href="#pause"/></svg></button>` : '<span></span>'}
+          <span class="name">${esc(n)}${real ? '<span class="tag">Playable</span>' : ''}</span>
+          <span class="t" ${real ? 'data-real-dur' : ''}>${real ? fmt(dur) : d}</span>
+        </li>`).join('')}</ol>`;
+    $$('[data-track-play]', dDetail).forEach(b => b.addEventListener('click', toggleSong));
+    syncUI();
+  }
+  dCards.addEventListener('click', e => {
+    const c = e.target.closest('.dcard'); if (!c) return;
+    $$('.dcard', dCards).forEach(x => { x.classList.toggle('is-active', x === c); x.setAttribute('aria-pressed', x === c); });
+    renderRelease(+c.dataset.rel);
+    if (innerWidth <= 980) setTimeout(() => scrollToEl(dDetail), 60);
+  });
+  renderRelease(0);
+
+  /* ================= videos ================= */
+  const VIDEOS = [
+    { title: 'Fractures', kind: 'Official music video', src: 'media/video-fractures.mp4', poster: 'img/vid_feat.webp', date: '2026-10-03',
+      desc: 'Shot over one rainy night in Berlin: glass, neon and two voices that refuse to blend quietly.' },
+    { title: 'Fractures — Live in Berlin', kind: 'Live session', src: 'media/video-live.mp4', poster: 'img/vid_crowd.webp', date: '2026-08-22',
+      desc: 'Recorded from the floor at Columbiahalle. No overdubs, just the room, the crowd and the drums.' },
+    { title: 'Blue Arch', kind: 'Concert film', src: 'media/video-concert.mp4', poster: 'img/vid_arch.webp', date: '2026-09-12',
+      desc: 'A short concert film built around the blue arch stage design from the summer shows.' }
+  ];
+  const dateLong = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric', timeZone: 'UTC' });
+  VIDEOS.forEach((v, i) => {
+    const p = document.createElement('video');
+    p.preload = 'metadata'; p.muted = true;
+    p.addEventListener('loadedmetadata', () => { v.dur = p.duration; $$(`[data-vdur="${i}"]`).forEach(el => el.textContent = fmt(v.dur)); p.removeAttribute('src'); p.load(); }, { once: true });
+    p.src = v.src;
+  });
+  $('#vidList').innerHTML = VIDEOS.map((v, i) => `
+    <article class="vcard">
+      <button class="vposter" data-open-video="${i}" aria-label="Play ${esc(v.title)}">
+        <span class="frame"><img src="${v.poster}" alt="" loading="lazy" decoding="async"></span>
+        <span class="vplay"><svg><use href="#tri"/></svg></span>
+        <span class="vdur" data-vdur="${i}">--:--</span>
+      </button>
+      <div class="vinfo">
+        <span class="kind">${esc(v.kind)}</span>
+        <h2 class="disp">${esc(v.title)}</h2>
+        <p>${esc(v.desc)}</p>
+        <dl><div><dt>Released</dt><dd>${dateLong(v.date)}</dd></div><div><dt>Length</dt><dd data-vdur="${i}">--:--</dd></div></dl>
+        <button class="link-arrow" data-open-video="${i}"><span>Play video</span>${ARROW}</button>
+      </div>
+    </article>`).join('');
+  const vm = $('#vm'), vmVideo = $('#vmVideo');
+  function openVideo(i) {
+    const v = VIDEOS[i];
+    vmVideo.poster = v.poster; vmVideo.src = v.src;
+    $('#vmTitle').textContent = v.title;
+    $('#vmInfo').textContent = `${v.kind} · ${dateLong(v.date)}`;
+    openOv(vm, 'video');
+    const p = vmVideo.play(); if (p && p.catch) p.catch(() => {});
+  }
+  function pauseVideo() { if (!vmVideo.paused) vmVideo.pause(); }
+  vmVideo.addEventListener('play', () => { if (!audio.paused) audio.pause(); });
+  vm.addEventListener('ovclose', () => { vmVideo.pause(); vmVideo.removeAttribute('src'); vmVideo.load(); });
+  document.addEventListener('click', e => { const b = e.target.closest('[data-open-video]'); if (b) openVideo(+b.dataset.openVideo); });
+  /* home: thumbs choose, big frame plays */
+  let featI = 0;
   const feat = $('#feat'), featImg = $('#featImg');
+  feat.addEventListener('click', () => openVideo(featI));
   $$('.thumb').forEach(th => th.addEventListener('click', () => {
+    featI = +th.dataset.vid; const v = VIDEOS[featI];
     $$('.thumb').forEach(x => x.classList.toggle('is-active', x === th));
     featImg.classList.add('swap');
-    setTimeout(() => {
-      featImg.src = th.dataset.src;
-      featImg.classList.remove('swap');
-    }, 280);
-    $('#featMeta').innerHTML = `Featured video<br>${th.dataset.kind}`;
-    $('#featDur').textContent = th.dataset.dur;
-    feat.dataset.title = th.dataset.name;
-    feat.dataset.dur = th.dataset.dur.replace(/^0/, '');
-    feat.dataset.video = th.dataset.src.replace(/^img\/|\.webp$/g, '');
+    setTimeout(() => { featImg.src = v.poster; featImg.classList.remove('swap'); }, 260);
+    $('#featMeta').innerHTML = `Featured video<br>${esc(v.kind)}`;
+    $('#featDur').dataset.vdur = featI; $('#featDur').textContent = v.dur ? fmt(v.dur) : '--:--';
+    feat.setAttribute('aria-label', 'Play ' + v.title);
   }));
 
-  /* ---- modal (video preview + gallery lightbox) ---- */
-  const modal = $('#modal'), mImg = $('#mImg'), mTitle = $('#mTitle'), mTrack = $('#mTrack'), mTime = $('#mTime'), mToggle = $('#mToggle');
-  let vDur = 0, vPos = 0, vPlay = false, vLast = 0, galList = [], galI = 0, lastFocus = null;
-  function openModal(mode) {
-    lastFocus = document.activeElement;
-    modal.classList.remove('video', 'gal', 'paused'); modal.classList.add(mode, 'open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => $('#mclose').focus(), 50);
+  /* ================= photos: home mosaic + archive + lightbox ================= */
+  const CAT = { live: 'Live', portraits: 'Portraits', editorial: 'Editorial', stills: 'Stills', backstage: 'Backstage' };
+  const PHOTOS = [
+    ['img/gn_live2.webp', 'Duo on a leather sofa under red light', 'editorial'],
+    ['img/tour2.webp', 'Band live on stage in red and blue light', 'live'],
+    ['img/her_a.webp', 'X-LIZA under a blue neon circle', 'portraits'],
+    ['img/gn_edit.webp', 'Bassist and drummer on a smoky blue stage', 'live'],
+    ['img/gn_port.webp', 'Signal / Saints poster, red and blue halves', 'editorial'],
+    ['img/r_him2.webp', 'Jack Gun in red light, close-up', 'portraits'],
+    ['img/vid_crowd.webp', 'Crowd with raised hands under red light', 'live'],
+    ['img/gn_still.webp', 'X-LIZA with a red laser line across her eyes', 'portraits'],
+    ['img/vid_feat.webp', 'X-LIZA behind a rain-streaked window', 'stills'],
+    ['img/gn_boot.webp', 'Duo in red smoke, holding a rose', 'editorial'],
+    ['img/v_crowd3.webp', 'X-LIZA facing the crowd, arms spread', 'live'],
+    ['img/him.webp', 'Jack Gun in red stage haze', 'portraits'],
+    ['img/gn_back.webp', 'Duo posing in a blue spotlight', 'editorial'],
+    ['img/r_drum4.webp', 'Jack Gun behind the kit in red smoke', 'live'],
+    ['img/v_bot2.webp', 'X-LIZA sitting on a blue-lit floor', 'stills'],
+    ['img/vid_arch.webp', 'Stage with a glowing blue arch', 'live'],
+    ['img/v_main2.webp', 'X-LIZA with a red light line across her face', 'portraits'],
+    ['img/shatter.webp', 'X-LIZA reaching through shattered glass', 'stills'],
+    ['img/duo5.webp', 'Drummer in red and vocalist in blue on stage', 'live'],
+    ['img/v_top3.webp', 'X-LIZA with arms raised in red and blue haze', 'portraits'],
+    ['img/w_her.webp', 'X-LIZA singing on a blue-lit stage', 'live'],
+    ['img/him_b.webp', 'Jack Gun smoking in red haze', 'portraits']
+  ].map(([src, alt, c]) => ({ src, alt, c }));
+  const lb = $('#lb'), lbImg = $('#lbImg');
+  let lbList = [], lbI = 0;
+  function lbShow(i) {
+    lbI = (i + lbList.length) % lbList.length; const p = lbList[lbI];
+    lbImg.style.opacity = 0;
+    const im = new Image(); im.onload = im.onerror = () => { lbImg.src = p.src; lbImg.alt = p.alt; lbImg.style.opacity = 1; }; im.src = p.src;
+    $('#lbCount').textContent = `${pad(lbI + 1)} / ${pad(lbList.length)}`;
+    $('#lbCat').textContent = `${CAT[p.c] || ''} · ${p.alt}`;
   }
-  function closeModal() {
-    modal.classList.remove('open'); vPlay = false; document.body.style.overflow = '';
-    if (lastFocus) lastFocus.focus();
-  }
-  function vTick(t) {
-    if (!vPlay) return;
-    if (vLast) vPos += (t - vLast) / 1000; vLast = t;
-    if (vPos >= vDur) vPos = 0;
-    mTrack.style.width = (vPos / vDur * 100) + '%';
-    mTime.textContent = `${fmt(vPos)} / ${fmt(vDur)}`;
-    requestAnimationFrame(vTick);
-  }
-  function setV(p) { vPlay = p; vLast = 0; modal.classList.toggle('paused', !p); mToggle.parentElement.classList.toggle('is-playing', p); mToggle.setAttribute('aria-label', p ? 'Pause' : 'Play'); if (p) requestAnimationFrame(vTick); }
-  $$('[data-video]').forEach(b => b.addEventListener('click', () => {
-    mImg.src = `img/${b.dataset.video}.webp`; mImg.alt = b.dataset.title;
-    mTitle.textContent = b.dataset.title;
-    const [m, s] = b.dataset.dur.split(':'); vDur = +m * 60 + +s; vPos = 0;
-    openModal('video'); setV(true);
-  }));
-  mToggle.addEventListener('click', () => setV(!vPlay));
-  $('#mclose').addEventListener('click', closeModal);
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  function showGal(i) {
-    galI = (i + galList.length) % galList.length;
-    const img = galList[galI].querySelector('img');
-    mImg.src = img.src; mImg.alt = img.alt;
-    mTitle.textContent = `${String(galI + 1).padStart(2, '0')} / ${String(galList.length).padStart(2, '0')} \u00b7 ${galList[galI].dataset.c}`;
-  }
-  $$('.tile').forEach(t => t.addEventListener('click', () => {
-    galList = $$('.tile').filter(x => !x.classList.contains('dim'));
-    if (!galList.includes(t)) galList = $$('.tile');
-    openModal('gal'); showGal(galList.indexOf(t));
-  }));
-  $('#openArchive').addEventListener('click', e => { e.preventDefault(); galList = $$('.tile'); openModal('gal'); showGal(0); });
-  $('#gPrev').addEventListener('click', () => showGal(galI - 1));
-  $('#gNext').addEventListener('click', () => showGal(galI + 1));
-  addEventListener('keydown', e => {
-    if (e.key === 'Escape') { if (modal.classList.contains('open')) closeModal(); else if (menu.classList.contains('is-open')) setMenu(false); }
-    if (modal.classList.contains('gal') && modal.classList.contains('open')) { if (e.key === 'ArrowRight') showGal(galI + 1); if (e.key === 'ArrowLeft') showGal(galI - 1); }
+  function openLb(list, i) { lbList = list; openOv(lb); lbShow(i); }
+  $('#lbPrev').addEventListener('click', () => lbShow(lbI - 1));
+  $('#lbNext').addEventListener('click', () => lbShow(lbI + 1));
+  addEventListener('keydown', e => { if (lb.hidden || !lb.classList.contains('open')) return; if (e.key === 'ArrowRight') lbShow(lbI + 1); if (e.key === 'ArrowLeft') lbShow(lbI - 1); });
+  let sx = null, sy = null;
+  lb.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (sx === null) return; const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) lbShow(lbI + (dx < 0 ? 1 : -1)); sx = null;
   });
-  // swipe in lightbox
-  let sx = null;
-  modal.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
-  modal.addEventListener('touchend', e => { if (sx === null || !modal.classList.contains('gal')) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) showGal(galI + (dx < 0 ? 1 : -1)); sx = null; });
-
-  /* ---- filter groups ---- */
-  function filters(groupSel, itemsSel, onDone) {
-    const btns = $$(`${groupSel} button`);
-    btns.forEach(b => b.addEventListener('click', () => {
-      btns.forEach(x => x.setAttribute('aria-pressed', x === b));
-      onDone(b.dataset.f, $$(itemsSel));
-    }));
-  }
-  filters('#galFilters', '.tile', (f, items) => items.forEach(t => t.classList.toggle('dim', f !== 'all' && t.dataset.c !== f)));
-  filters('#merchFilters', '.prod', (f, items) => {
-    let shown = 0;
-    items.forEach(p => {
-      const on = f === 'all' || p.dataset.c === f;
-      p.classList.toggle('hide', !on);
-      if (on) { shown++; if (!reduce) p.animate([{ opacity: 0, transform: 'translateY(24px) scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 600, delay: shown * 70, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }); }
-    });
-    $('#empty').hidden = shown > 0;
-  });
-
-  /* ---- cart + toast ---- */
-  let cartN = 0, toastTimer;
-  const toast = (msg) => { $('#toastT').textContent = msg; $('#toast').classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 2200); };
-  $$('.add').forEach(b => b.addEventListener('click', () => {
-    cartN++; $('#cartN').textContent = cartN;
-    const c = $('#cart'); c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump');
-    toast(`${b.dataset.name} added to cart`);
-  }));
-  $$('[data-tix]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); const r = a.closest('.row'); toast(`Tickets for ${r.children[1].textContent} open soon`); }));
-
-  /* ---- tour: image peek follows cursor ---- */
-  const peek = $('.peek'), peekImg = peek.querySelector('img');
-  let px = 0, py = 0, ptx = 0, pty = 0, peekOn = false;
-  if (false) {
-    $$('.row').forEach(r => {
-      r.addEventListener('pointerenter', () => { peekImg.src = r.dataset.img; peek.classList.add('on'); peekOn = true; animPeek(); });
-      r.addEventListener('pointerleave', () => { peek.classList.remove('on'); peekOn = false; });
-      r.addEventListener('pointermove', e => {
-        ptx = e.clientX + 170; pty = e.clientY;
-        const onTix = !!e.target.closest('.tix');
-        if (onTix && peekOn) { peek.classList.remove('on'); peekOn = false; }
-        else if (!onTix && !peekOn) { peek.classList.add('on'); peekOn = true; animPeek(); }
-      });
+  /* filter buttons built only from categories that have photos */
+  function buildFilters(box, items, onPick) {
+    const cats = Object.keys(CAT).filter(c => items.some(p => p.c === c));
+    box.innerHTML = [['all', 'All', items.length], ...cats.map(c => [c, CAT[c], items.filter(p => p.c === c).length])]
+      .map(([f, n, k], i) => `<button aria-pressed="${i ? 'false' : 'true'}" data-f="${f}">${n}${box.classList.contains('pfilters') ? `<sup>${k}</sup>` : ''}</button>`).join('');
+    box.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      $$('button', box).forEach(x => x.setAttribute('aria-pressed', x === b)); onPick(b.dataset.f);
     });
   }
-  function animPeek() {
-    px += (ptx - px) * .15; py += (pty - py) * .15;
-    peek.style.left = px + 'px'; peek.style.top = py + 'px';
-    peek.style.transform = `translate(-50%,-50%) scale(${peekOn ? 1 : .6}) rotate(${clamp((ptx - px) * .05, -8, 8)}deg)`;
-    if (peekOn) requestAnimationFrame(animPeek);
+  /* home mosaic */
+  const tiles = $$('.tile');
+  const tileData = tiles.map(t => { const im = t.querySelector('img'); return { src: im.getAttribute('src'), alt: im.alt, c: t.dataset.c, el: t }; });
+  buildFilters($('#galFilters'), tileData, f => tiles.forEach(t => t.classList.toggle('dim', f !== 'all' && t.dataset.c !== f)));
+  tiles.forEach((t, i) => t.addEventListener('click', () => {
+    const list = tileData.filter(p => !p.el.classList.contains('dim'));
+    openLb(list.length ? list : tileData, Math.max(0, list.indexOf(tileData[i])));
+  }));
+  /* archive page */
+  let archF = 'all', archBuilt = false;
+  function renderArchive() {
+    const grid = $('#archGrid');
+    if (!archBuilt) { archBuilt = true; buildFilters($('#archFilters'), PHOTOS, f => { archF = f; renderArchive(); }); }
+    const list = PHOTOS.filter(p => archF === 'all' || p.c === archF);
+    grid.innerHTML = list.map((p, i) => `<button class="arch-item${reduce ? '' : ' in'}" style="animation-delay:${Math.min(i, 12) * 40}ms" data-i="${i}" aria-label="Open photo: ${esc(p.alt)}"><span class="frame"><img src="${p.src}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></span><span class="cap">${CAT[p.c]}</span></button>`).join('');
+    $('#archCount').textContent = `${list.length} photo${list.length === 1 ? '' : 's'}`;
+    grid.onclick = e => { const b = e.target.closest('.arch-item'); if (b) openLb(list, +b.dataset.i); };
   }
 
-  /* ---- countdown to opening night (LA, Nov 14 2026, 8pm PST) ---- */
-  const target = Date.parse('2026-11-14T20:00:00-08:00');
-  const pad = n => String(n).padStart(2, '0');
+  /* ================= tour dates, countdown, tickets ================= */
+  const SHOWS = [
+    ['2026-11-14T20:00:00-08:00', 'Los Angeles, CA', 'The Wiltern', 'few', 'img/tour2.webp'],
+    ['2026-11-18T20:00:00-05:00', 'New York, NY', 'Brooklyn Steel', 'on', 'img/vid_crowd.webp'],
+    ['2026-11-22T20:00:00-05:00', 'Toronto, ON', 'History', 'on', 'img/gn_edit.webp'],
+    ['2026-11-27T20:00:00-06:00', 'Chicago, IL', 'Riviera Theatre', 'sold', 'img/duo5.webp'],
+    ['2026-12-02T19:30:00+00:00', 'London, UK', 'O2 Forum Kentish Town', 'few', 'img/v_crowd3.webp'],
+    ['2026-12-05T20:00:00+01:00', 'Berlin, DE', 'Columbiahalle', 'on', 'img/vid_arch.webp'],
+    ['2026-12-11T20:00:00+01:00', 'Paris, FR', 'Le Trianon', 'on', 'img/w_her.webp'],
+    ['2026-12-18T19:00:00+09:00', 'Tokyo, JP', 'Zepp Shinjuku', 'on', 'img/r_drum4.webp'],
+    ['2027-01-22T20:00:00+11:00', 'Melbourne, AU', 'Forum Melbourne', 'on', 'img/tour2.webp'],
+    ['2027-01-29T20:00:00+11:00', 'Sydney, AU', 'Enmore Theatre', 'few', 'img/gn_edit.webp'],
+    ['2027-02-12T21:00:00-06:00', 'Mexico City, MX', 'Foro Indie Rocks!', 'on', 'img/vid_crowd.webp'],
+    ['2027-02-19T21:00:00-03:00', 'São Paulo, BR', 'Cine Joia', 'on', 'img/v_crowd3.webp'],
+    ['2027-03-06T20:00:00+01:00', 'Warsaw, PL', 'Progresja', 'on', 'img/duo5.webp'],
+    ['2027-03-13T20:00:00+01:00', 'Prague, CZ', 'Lucerna Music Bar', 'sold', 'img/vid_arch.webp']
+  ].map(([d, city, venue, st, img]) => {
+    const [y, m, dd] = d.slice(0, 10).split('-').map(Number), hh = d.slice(11, 16);
+    const local = new Date(Date.UTC(y, m - 1, dd));
+    const doors = `${pad((+hh.slice(0, 2) + 23) % 24)}:${hh.slice(3)}`;
+    return { ts: Date.parse(d), city, venue, st, img, time: hh, doors,
+      date: local.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric', timeZone: 'UTC' }),
+      day: local.toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' }),
+      long: local.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) };
+  });
+  const FIRST = 8;
+  const datesBox = $('#dates');
+  function rowHTML(s, i) {
+    const past = s.ts < Date.now();
+    const chip = past ? 'Played' : s.st === 'sold' ? 'Sold out' : s.st === 'few' ? 'Few left' : '';
+    const btn = past ? `<button class="tix" disabled>Played</button>`
+      : s.st === 'sold' ? `<button class="tix wait" data-show="${i}">Waitlist${ARROW}</button>`
+      : `<button class="tix" data-show="${i}">Tickets${ARROW}</button>`;
+    return `<div class="row${past ? ' past' : ''}"><span class="d">${s.date}<small>${s.day} · ${s.time}</small></span><span class="c">${esc(s.city)}</span><span class="v">${esc(s.venue)}</span><span class="chip${chip ? '' : ' blank'}">${chip || '—'}</span>${btn}</div>`;
+  }
+  datesBox.innerHTML = SHOWS.slice(0, FIRST).map(rowHTML).join('') + `<div class="more-dates" id="moreRows" hidden>${SHOWS.slice(FIRST).map((s, i) => rowHTML(s, i + FIRST)).join('')}</div>`;
+  const moreBtn = $('#moreDates');
+  if (SHOWS.length <= FIRST) moreBtn.remove();
+  else moreBtn.addEventListener('click', () => {
+    const box = $('#moreRows'), open = box.hidden;
+    box.hidden = !open; moreBtn.setAttribute('aria-expanded', open);
+    moreBtn.querySelector('span').textContent = open ? 'Show fewer dates' : `View all dates (${SHOWS.length})`;
+    if (open && !reduce) $$('.row', box).forEach((r, i) => r.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: i * 50, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' }));
+  });
+  moreBtn.querySelector('span') && (moreBtn.querySelector('span').textContent = `View all dates (${SHOWS.length})`);
   function cd() {
-    let s = Math.max(0, Math.floor((target - Date.now()) / 1000));
+    const now = Date.now(), next = SHOWS.find(s => s.ts > now);
+    const box = $('#countdown'), lab = $('#cdLabel');
+    if (!next) { box.hidden = true; lab.className = 'cd-none'; lab.textContent = 'No upcoming shows right now. Join the list below to hear about new dates first.'; return; }
+    let s = Math.floor((next.ts - now) / 1000);
     $('#cdD').textContent = pad(Math.floor(s / 86400)); s %= 86400;
     $('#cdH').textContent = pad(Math.floor(s / 3600)); s %= 3600;
-    $('#cdM').textContent = pad(Math.floor(s / 60));
-    $('#cdS').textContent = pad(s % 60);
+    $('#cdM').textContent = pad(Math.floor(s / 60)); $('#cdS').textContent = pad(s % 60);
+    lab.textContent = `Until next show · ${next.city.split(',')[0]} · ${next.date}`;
   }
   cd(); setInterval(cd, 1000);
+
+  const TYPES = [['ga', 'General admission', 'Standing, floor and balcony', 45], ['early', 'Early entry', 'GA + doors 45 minutes earlier', 65], ['vip', 'VIP', 'Early entry, soundcheck and signed poster', 120]];
+  const tm = $('#tm'), tmBody = $('#tmBody');
+  let tk = null;
+  function tmStep(step) {
+    const s = SHOWS[tk.i], t = TYPES.find(x => x[0] === tk.type), total = t[3] * tk.qty;
+    $('#tmImg').src = s.img; $('#tmChip').textContent = s.st === 'sold' ? 'Sold out' : s.st === 'few' ? 'Few left' : 'On sale';
+    const head = `<span class="kick">Fractures Tour ${new Date(s.ts).getUTCFullYear()}</span><h3>${esc(s.city.split(',')[0])}</h3>
+      <dl class="facts"><div><dt>Venue</dt><dd>${esc(s.venue)}, ${esc(s.city)}</dd></div><div><dt>Date</dt><dd>${s.long}</dd></div><div><dt>Doors / show</dt><dd>${s.doors} / ${s.time} local time</dd></div></dl>`;
+    if (step === 'select') {
+      tmBody.innerHTML = head + `
+        <fieldset class="ttypes"><legend>Ticket type</legend>${TYPES.map(([id, n, d, p]) => `<label><input type="radio" name="tt" value="${id}" ${id === tk.type ? 'checked' : ''}><span class="tn">${n}<span class="td2">${d}</span></span><span class="tpz">${money(p)}</span></label>`).join('')}</fieldset>
+        <div class="pm-row" style="justify-content:space-between"><span class="opt-label">Quantity</span><div class="qty"><button type="button" data-tq="-1" aria-label="Fewer tickets">−</button><output id="tq">${tk.qty}</output><button type="button" data-tq="1" aria-label="More tickets">+</button></div></div>
+        <div class="sum"><span>Total</span><b id="tTotal">${money(total)}</b></div>
+        <div class="tm-actions"><button class="btn-solid" id="tmGo">Reserve tickets</button></div>
+        <p class="demo-note">Demo booking — no payment required</p>`;
+      $$('input[name="tt"]', tmBody).forEach(r => r.addEventListener('change', () => { tk.type = r.value; tmStep('select'); $(`input[value="${r.value}"]`, tmBody).focus(); }));
+      $$('[data-tq]', tmBody).forEach(b => b.addEventListener('click', () => { tk.qty = clamp(tk.qty + +b.dataset.tq, 1, s.st === 'few' ? 4 : 8); $('#tq').textContent = tk.qty; $('#tTotal').textContent = money(TYPES.find(x => x[0] === tk.type)[3] * tk.qty); }));
+      $('#tmGo').addEventListener('click', () => tmStep('contact'));
+    } else if (step === 'contact') {
+      tmBody.innerHTML = head + `
+        <div class="steps"><span>1 Tickets</span><i>/</i><span class="on">2 Your details</span><i>/</i><span>3 Done</span></div>
+        <div class="rv-list"><div><span>${tk.qty} × ${t[1]}</span><span>${money(total)}</span></div></div>
+        <form id="tmForm" class="fgrid" novalidate>
+          <div class="field full"><label for="tmName">Full name</label><input id="tmName" autocomplete="name" value="${esc(tk.name || '')}"><span class="err"></span></div>
+          <div class="field full"><label for="tmMail">Email</label><input id="tmMail" type="email" autocomplete="email" value="${esc(tk.mail || '')}"><span class="err"></span></div>
+        </form>
+        <p class="demo-note">Demo booking — no payment required</p>
+        <div class="tm-actions"><button class="btn-line" id="tmBack">Back</button><button class="btn-solid" id="tmConfirm">Confirm reservation</button></div>`;
+      $('#tmBack').addEventListener('click', () => tmStep('select'));
+      const submit = () => {
+        const n = $('#tmName'), m = $('#tmMail'); let ok = true;
+        [[n, n.value.trim().length > 1, 'Enter your name'], [m, isEmail(m.value.trim()), 'Enter an email like name@mail.com']].forEach(([el, good, msg]) => { el.parentElement.classList.toggle('bad', !good); el.nextElementSibling.textContent = good ? '' : msg; if (!good && ok) { el.focus(); ok = false; } });
+        if (!ok) return;
+        tk.name = n.value.trim(); tk.mail = m.value.trim(); tk.code = 'SS-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+        tmStep('done'); toast('Tickets reserved (demo)');
+      };
+      $('#tmConfirm').addEventListener('click', submit);
+      $('#tmForm').addEventListener('submit', e => { e.preventDefault(); submit(); });
+      setTimeout(() => $('#tmName').focus(), 50);
+    } else if (step === 'done') {
+      tmBody.innerHTML = `<div class="done-mark">${CHECK}</div><span class="kick">Reservation ${tk.code}</span><h3>You&rsquo;re on the list</h3>
+        <dl class="facts"><div><dt>Show</dt><dd>${esc(s.city)} · ${esc(s.venue)}</dd></div><div><dt>Date</dt><dd>${s.long}, ${s.time}</dd></div><div><dt>Tickets</dt><dd>${tk.qty} × ${t[1]}</dd></div><div><dt>Total</dt><dd>${money(total)}</dd></div><div><dt>Name</dt><dd>${esc(tk.name)}</dd></div><div><dt>Email</dt><dd>${esc(tk.mail)}</dd></div></dl>
+        <p class="demo-note">Demo booking — nothing was charged and no email is sent</p>
+        <div class="tm-actions"><button class="btn-solid" data-close>Done</button></div>`;
+      $('[data-close]', tmBody).focus();
+    } else if (step === 'wait') {
+      tmBody.innerHTML = head + `<p style="margin:0;color:var(--soft);font-size:16px;line-height:1.6">This show is sold out. Leave your email and we&rsquo;ll let you know if tickets come back.</p>
+        <form id="wForm" class="fgrid" novalidate><div class="field full"><label for="wMail">Email</label><input id="wMail" type="email" autocomplete="email"><span class="err"></span></div></form>
+        <div class="tm-actions"><button class="btn-solid" id="wGo">Join waitlist</button></div><p class="demo-note">Demo waitlist — no email is sent</p>`;
+      const go2 = () => { const m = $('#wMail'), good = isEmail(m.value.trim()); m.parentElement.classList.toggle('bad', !good); m.nextElementSibling.textContent = good ? '' : 'Enter an email like name@mail.com'; if (!good) { m.focus(); return; }
+        tmBody.innerHTML = head + `<div class="done-mark">${CHECK}</div><p style="margin:0;font-size:16px">You&rsquo;re on the waitlist for ${esc(s.city)}. We&rsquo;ll write to ${esc(m.value.trim())} if tickets are released.</p><p class="demo-note">Demo waitlist — no email is sent</p><div class="tm-actions"><button class="btn-solid" data-close>Done</button></div>`; toast('Added to waitlist (demo)'); };
+      $('#wGo').addEventListener('click', go2); $('#wForm').addEventListener('submit', e => { e.preventDefault(); go2(); });
+    }
+  }
+  datesBox.addEventListener('click', e => {
+    const b = e.target.closest('[data-show]'); if (!b) return;
+    const i = +b.dataset.show; tk = { i, type: 'ga', qty: 2 };
+    tmStep(SHOWS[i].st === 'sold' ? 'wait' : 'select'); openOv(tm);
+  });
+
+  /* ================= shop, product modal, cart, checkout ================= */
+  const PH = (label, path) => 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><rect width="600" height="600" fill="#0c0e13"/><g stroke="#2a2b2f">${Array.from({ length: 11 }, (_, i) => `<path d="M${i * 60} 0V600M0 ${i * 60}H600"/>`).join('')}</g><circle cx="300" cy="300" r="200" fill="none" stroke="#ff2340" stroke-opacity=".35" stroke-width="2"/><g fill="none" stroke="#ecebe7" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">${path}</g><text x="300" y="520" fill="#8b909b" font-family="monospace" font-size="22" letter-spacing="4" text-anchor="middle">${label} · PHOTO SOON</text></svg>`);
+  const ICON = {
+    tote: '<path d="M200 250h200l20 190H180z"/><path d="M245 250c0-60 110-60 110 0"/>',
+    pins: '<circle cx="250" cy="290" r="60"/><path d="M370 230l20 40 44 6-32 30 8 44-40-21-40 21 8-44-32-30 44-6z"/>',
+    beanie: '<path d="M190 380c0-140 220-140 220 0z"/><path d="M180 380h240v50H180z"/><circle cx="300" cy="215" r="20"/>',
+    picks: '<path d="M300 420c-60-60-100-120-100-170 0-40 45-60 100-60s100 20 100 60c0 50-40 110-100 170z"/>'
+  };
+  const CATALOG = [
+    { id: 'tee', name: 'Blood Moon Tee', cat: 'apparel', kind: 'T-shirt', price: 35, imgs: ['img/m_tee2.webp'], sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], desc: 'Heavyweight black cotton tee with the Blood Moon tour artwork. Relaxed fit, screen printed in Berlin.' },
+    { id: 'hoodie', name: 'Blood Moon Hoodie', cat: 'apparel', kind: 'Hoodie', price: 65, imgs: ['img/m_hood2.webp'], sizes: ['S', 'M', 'L', 'XL', 'XXL'], desc: 'Brushed-fleece black hoodie with the Blood Moon print on the chest. Kangaroo pocket, ribbed cuffs.' },
+    { id: 'poster', name: 'Blood Moon Poster', cat: 'prints', kind: 'Poster', price: 20, imgs: ['img/m_post2.webp'], desc: '50 × 70 cm tour poster on matte 200 g paper. Ships rolled in a tube; frame not included.' },
+    { id: 'lp', name: 'Blood Moon Edition LP', cat: 'music', kind: 'Vinyl', price: 32, imgs: ['img/m_vin2.webp'], desc: 'Fractures on 180 g black vinyl in the Blood Moon tour sleeve, with a printed lyric insert.' },
+    { id: 'cd', name: 'Fractures CD', cat: 'music', kind: 'CD', price: 15, imgs: ['img/cover2.webp'], desc: 'The debut album in a six-panel digipak with photos from the Fractures sessions.' },
+    { id: 'cassette', name: 'Static Hearts Cassette', cat: 'music', kind: 'Cassette', price: 12, imgs: ['img/cover_static.webp'], desc: 'The 2025 EP on red cassette, limited to 300 copies. Includes a download code.' },
+    { id: 'single', name: 'Afterimage 7" Single', cat: 'music', kind: '7" vinyl', price: 14, imgs: ['img/cover_after.webp'], desc: 'Afterimage and its Night Version on 7" smoke vinyl.' },
+    { id: 'print', name: 'Shatter Art Print', cat: 'prints', kind: 'Art print', price: 25, imgs: ['img/shatter.webp'], desc: 'A3 giclée print of the Fractures campaign photo on archival cotton paper.' },
+    { id: 'tote', name: 'Blood Moon Tote', cat: 'accessories', kind: 'Tote bag', price: 18, imgs: [PH('TOTE BAG', ICON.tote)], desc: 'Heavy natural-black canvas tote with a one-colour Signal / Saints print. Fits a laptop and a few records.' },
+    { id: 'pins', name: 'Enamel Pin Set', cat: 'accessories', kind: 'Pins', price: 12, imgs: [PH('PIN SET', ICON.pins)], desc: 'Two hard-enamel pins: the slash logo and the Blood Moon star. Black nickel, rubber backs.' },
+    { id: 'beanie', name: 'Signal Beanie', cat: 'accessories', kind: 'Beanie', price: 28, imgs: [PH('BEANIE', ICON.beanie)], sizes: ['One size'], desc: 'Black rib-knit beanie with a woven red slash label.' },
+    { id: 'picks', name: 'Guitar Pick Set', cat: 'accessories', kind: 'Picks', price: 9, imgs: [PH('PICK SET', ICON.picks)], desc: 'Six medium picks in three colours, printed with the band logo.' }
+  ];
+  const byId = id => CATALOG.find(p => p.id === id);
+  const needsSize = p => p.sizes && p.sizes.length > 1;
+  const SCAT = { apparel: 'Apparel', music: 'Music', prints: 'Prints', accessories: 'Accessories' };
+  function cardHTML(p, i, n) {
+    return `<article class="prod${reduce ? '' : ' in'}" style="animation-delay:${Math.min(i, 8) * 50}ms">
+      <div class="pimg"><button class="prod-open" data-pid="${p.id}" aria-label="View ${esc(p.name)}"><span class="frame"><img src="${p.imgs[0]}" alt="${esc(p.name)}" loading="lazy" decoding="async"><span class="num">${pad(n)}<br>${esc(p.kind)}</span></span></button>
+      <button class="add" data-quick="${p.id}">${needsSize(p) ? 'Choose size' : 'Add to cart'} &middot; ${money(p.price)}</button></div>
+      <div class="info"><span>${esc(p.name)}<i></i></span><span>${money(p.price)}</span></div>
+    </article>`;
+  }
+  const PICKS = ['tee', 'hoodie', 'poster', 'lp'];
+  $('#products').innerHTML = PICKS.map((id, i) => cardHTML(byId(id), i, i + 1)).join('');
+  let shopF = 'all', shopBuilt = false;
+  function renderShop() {
+    if (!shopBuilt) {
+      shopBuilt = true;
+      const box = $('#shopFilters');
+      box.innerHTML = [['all', 'All', CATALOG.length], ...Object.keys(SCAT).map(c => [c, SCAT[c], CATALOG.filter(p => p.cat === c).length])].filter(x => x[2]).map(([f, n, k], i) => `<button aria-pressed="${i ? 'false' : 'true'}" data-f="${f}">${n}<sup>${k}</sup></button>`).join('');
+      box.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $$('button', box).forEach(x => x.setAttribute('aria-pressed', x === b)); shopF = b.dataset.f; renderShop(); });
+    }
+    const list = CATALOG.filter(p => shopF === 'all' || p.cat === shopF);
+    $('#shopGrid').innerHTML = list.map((p, i) => cardHTML(p, i, CATALOG.indexOf(p) + 1)).join('');
+  }
+  document.addEventListener('click', e => {
+    const o = e.target.closest('[data-pid]'); if (o) { openProduct(o.dataset.pid); return; }
+    const q = e.target.closest('[data-quick]');
+    if (q) { const p = byId(q.dataset.quick); if (needsSize(p)) openProduct(p.id, true); else { addToCart(p.id, p.sizes ? p.sizes[0] : '', 1); } }
+  });
+  const pm = $('#pm');
+  function openProduct(id, askSize) {
+    const p = byId(id); let size = p.sizes && p.sizes.length === 1 ? p.sizes[0] : '', qty = 1;
+    $('#pmBox').innerHTML = `
+      <button class="ov-x" data-close aria-label="Close">${CLOSE}</button>
+      <div class="pm-media"><img class="main" id="pmMain" src="${p.imgs[0]}" alt="${esc(p.name)}">${p.imgs.length > 1 ? `<div class="pm-thumbs">${p.imgs.map((s, i) => `<button aria-pressed="${!i}" data-pimg="${i}"><img src="${s}" alt=""></button>`).join('')}</div>` : ''}</div>
+      <div class="pm-info">
+        <span class="kick">${SCAT[p.cat]} · ${esc(p.kind)}</span>
+        <h3 id="pmTitle">${esc(p.name)}</h3>
+        <span class="price">${money(p.price)}</span>
+        <p>${esc(p.desc)}</p>
+        ${p.sizes ? `<div><div class="opt-label"><span>Size</span><span id="pmSizeLab">${size || 'Choose a size'}</span></div><div class="sizes" id="pmSizes" role="group" aria-label="Size" style="margin-top:8px">${p.sizes.map(s => `<button aria-pressed="${s === size}" data-size="${s}">${s}</button>`).join('')}</div></div>` : ''}
+        <div class="pm-row"><div class="qty"><button type="button" data-pq="-1" aria-label="Decrease quantity">−</button><output id="pmQty">1</output><button type="button" data-pq="1" aria-label="Increase quantity">+</button></div>
+        <button class="btn-solid" id="pmAdd">Add to cart · ${money(p.price)}</button></div>
+        <div class="pm-msg${askSize ? ' bad' : ''}" id="pmMsg" aria-live="polite">${askSize ? 'Choose a size first' : ''}</div>
+      </div>`;
+    pm.setAttribute('aria-labelledby', 'pmTitle');
+    const msg = $('#pmMsg');
+    $$('[data-pimg]', pm).forEach(b => b.addEventListener('click', () => { $('#pmMain').src = p.imgs[+b.dataset.pimg]; $$('[data-pimg]', pm).forEach(x => x.setAttribute('aria-pressed', x === b)); }));
+    $$('[data-size]', pm).forEach(b => b.addEventListener('click', () => { size = b.dataset.size; $$('[data-size]', pm).forEach(x => x.setAttribute('aria-pressed', x === b)); $('#pmSizeLab').textContent = size; $('#pmSizes').classList.remove('bad'); msg.className = 'pm-msg'; msg.textContent = ''; }));
+    $$('[data-pq]', pm).forEach(b => b.addEventListener('click', () => { qty = clamp(qty + +b.dataset.pq, 1, 10); $('#pmQty').textContent = qty; $('#pmAdd').textContent = `Add to cart · ${money(p.price * qty)}`; }));
+    $('#pmAdd').addEventListener('click', () => {
+      if (p.sizes && !size) { $('#pmSizes').classList.add('bad'); msg.className = 'pm-msg bad'; msg.textContent = 'Choose a size first'; $('#pmSizes button').focus(); return; }
+      addToCart(p.id, size, qty);
+      msg.className = 'pm-msg ok'; msg.innerHTML = `Added ${qty} × ${esc(p.name)}${size ? ' · ' + size : ''}. <a href="#" id="pmCart">View cart</a>`;
+      $('#pmCart').addEventListener('click', e => { e.preventDefault(); closeOv(pm); openCart(); });
+    });
+    openOv(pm, askSize && p.sizes ? '#pmSizes button' : '.ov-x');
+  }
+  /* cart state (kept in this browser) */
+  let cart = store.get('ss-cart', []).filter(l => byId(l.id));
+  const cartCount = () => cart.reduce((n, l) => n + l.qty, 0);
+  const subtotal = () => cart.reduce((n, l) => n + byId(l.id).price * l.qty, 0);
+  function saveCart() { store.set('ss-cart', cart); $('#cartN').textContent = cartCount(); }
+  function addToCart(id, size, qty) {
+    const l = cart.find(x => x.id === id && x.size === size);
+    if (l) l.qty = Math.min(20, l.qty + qty); else cart.push({ id, size, qty });
+    saveCart();
+    const c = $('#cart'); c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump');
+    toast(`Added: ${byId(id).name}${size && size !== 'One size' ? ' · ' + size : ''} × ${qty}`);
+    if (!cdx.hidden && step === "cart") renderCart();
+  }
+  saveCart();
+  const cdEl = $('#cd'); const cdx = cdEl;
+  let step = 'cart', ship = store.get('ss-ship', { name: '', email: '', address: '', city: '', zip: '', country: 'Germany', method: 'standard' }), lastOrder = null;
+  const SHIP = { standard: ['Standard', '5–7 business days', 6], express: ['Express', '2–3 business days', 14] };
+  const steps = n => `<div class="steps">${['Cart', 'Details', 'Review'].map((s, i) => `<span class="${i + 1 === n ? 'on' : ''}">${i + 1} ${s}</span>`).join('<i>/</i>')}</div>`;
+  function openCart() { step = 'cart'; renderCart(); openOv(cdx); }
+  $('#cart').addEventListener('click', e => { e.preventDefault(); openCart(); });
+  function renderCart() {
+    const body = $('#cdBody'), foot = $('#cdFoot');
+    $('#cdTitle').textContent = step === 'done' ? 'Order placed' : step === 'cart' ? `Cart (${cartCount()})` : 'Checkout';
+    if (step === 'done') {
+      const o = lastOrder;
+      body.innerHTML = `<div class="done-mark">${CHECK}</div><span class="kick">Order ${o.no}</span><p style="margin:0;font-size:16px;line-height:1.6">Thanks, ${esc(o.ship.name.split(' ')[0])}. This was a demo order, so nothing was charged and nothing will ship.</p>
+        <div class="rv-list">${o.lines.map(l => `<div><span>${l.qty} × ${esc(l.name)}${l.size && l.size !== 'One size' ? ' · ' + l.size : ''}</span><span>${money(l.price * l.qty)}</span></div>`).join('')}<div><span>Delivery · ${SHIP[o.ship.method][0]}</span><span>${money(o.deliv)}</span></div></div>
+        <div class="sum"><span>Total</span><b>${money(o.total)}</b></div>
+        <dl class="facts"><div><dt>Ship to</dt><dd>${esc(o.ship.address)}, ${esc(o.ship.zip)} ${esc(o.ship.city)}, ${esc(o.ship.country)}</dd></div><div><dt>Email</dt><dd>${esc(o.ship.email)}</dd></div></dl>`;
+      foot.innerHTML = `<p class="demo-note">Your cart has been cleared</p><a class="btn-solid" href="#shop">Continue shopping</a>`;
+      return;
+    }
+    if (!cart.length) {
+      body.innerHTML = `<div class="cempty"><p>Your cart is empty.</p><a class="btn-line" href="#shop">Go to shop ${ARROW}</a></div>`;
+      foot.innerHTML = ''; return;
+    }
+    if (step === 'cart') {
+      body.innerHTML = cart.map((l, i) => { const p = byId(l.id); return `<div class="citem"><img src="${p.imgs[0]}" alt=""><div><h4>${esc(p.name)}</h4><div class="sub">${l.size && l.size !== 'One size' ? 'Size ' + l.size + ' · ' : ''}${money(p.price)}</div><div class="qty"><button data-cq="-1" data-ci="${i}" aria-label="Decrease ${esc(p.name)}">−</button><output>${l.qty}</output><button data-cq="1" data-ci="${i}" aria-label="Increase ${esc(p.name)}">+</button></div></div><div class="right"><span>${money(p.price * l.qty)}</span><button class="rm" data-rm="${i}">Remove</button></div></div>`; }).join('');
+      foot.innerHTML = `<div class="sum"><span>Subtotal</span><b>${money(subtotal())}</b></div><p class="demo-note">Demo shop — no payment details are requested</p><button class="btn-solid" id="toDetails">Checkout ${ARROW}</button>`;
+      $('#toDetails').addEventListener('click', () => { step = 'details'; renderCart(); setTimeout(() => $('#shName').focus(), 30); });
+      return;
+    }
+    if (step === 'details') {
+      const f = (id, k, label, type = 'text', ac = '', full = true) => `<div class="field${full ? ' full' : ''}"><label for="${id}">${label}</label><input id="${id}" data-k="${k}" type="${type}" autocomplete="${ac}" value="${esc(ship[k])}"><span class="err"></span></div>`;
+      body.innerHTML = steps(2) + `<p class="demo-note">Demo checkout — no payment details are requested and nothing is charged</p>
+        <form class="fgrid" id="shipForm" novalidate>${f('shName', 'name', 'Full name', 'text', 'name')}${f('shMail', 'email', 'Email', 'email', 'email')}${f('shAddr', 'address', 'Street address', 'text', 'street-address')}${f('shCity', 'city', 'City', 'text', 'address-level2', false)}${f('shZip', 'zip', 'Postal code', 'text', 'postal-code', false)}
+        <div class="field full"><label for="shCountry">Country</label><select id="shCountry" data-k="country" autocomplete="country-name">${['Germany', 'United Kingdom', 'France', 'Poland', 'Ukraine', 'United States', 'Canada', 'Japan', 'Australia'].map(c => `<option ${c === ship.country ? 'selected' : ''}>${c}</option>`).join('')}</select></div>
+        <div class="deliv full">${Object.entries(SHIP).map(([k, [n, d, p]]) => `<label><input type="radio" name="dm" value="${k}" ${k === ship.method ? 'checked' : ''}><span>${n} · ${d}</span><b>${money(p)}</b></label>`).join('')}</div></form>`;
+      foot.innerHTML = `<div class="tm-actions"><button class="btn-line" id="toCart">Back</button><button class="btn-solid" id="toReview">Review order</button></div>`;
+      $('#toCart').addEventListener('click', () => { step = 'cart'; renderCart(); });
+      const go3 = () => {
+        let ok = true;
+        $$('#shipForm [data-k]').forEach(el => { ship[el.dataset.k] = el.value.trim(); });
+        ship.method = ($('input[name="dm"]:checked') || {}).value || 'standard';
+        $$('#shipForm input[data-k]').forEach(el => {
+          const k = el.dataset.k, v = el.value.trim(), good = k === 'email' ? isEmail(v) : v.length > 1;
+          el.parentElement.classList.toggle('bad', !good);
+          el.nextElementSibling.textContent = good ? '' : (k === 'email' ? 'Enter an email like name@mail.com' : 'Required');
+          if (!good && ok) { el.focus(); ok = false; }
+        });
+        store.set('ss-ship', ship);
+        if (ok) { step = 'review'; renderCart(); }
+      };
+      $('#toReview').addEventListener('click', go3);
+      $('#shipForm').addEventListener('submit', e => { e.preventDefault(); go3(); });
+      return;
+    }
+    if (step === 'review') {
+      const deliv = SHIP[ship.method][2];
+      body.innerHTML = steps(3) + `<div class="rv-list">${cart.map(l => { const p = byId(l.id); return `<div><span>${l.qty} × ${esc(p.name)}${l.size && l.size !== 'One size' ? ' · ' + l.size : ''}</span><span>${money(p.price * l.qty)}</span></div>`; }).join('')}
+        <div><span>Subtotal</span><span>${money(subtotal())}</span></div><div><span>Delivery · ${SHIP[ship.method][0]}</span><span>${money(deliv)}</span></div></div>
+        <div class="sum"><span>Total</span><b>${money(subtotal() + deliv)}</b></div>
+        <dl class="facts"><div><dt>Ship to</dt><dd>${esc(ship.name)}<br>${esc(ship.address)}<br>${esc(ship.zip)} ${esc(ship.city)}, ${esc(ship.country)}</dd></div><div><dt>Email</dt><dd>${esc(ship.email)}</dd></div></dl>`;
+      foot.innerHTML = `<p class="demo-note">Demo order — no payment is taken</p><div class="tm-actions"><button class="btn-line" id="toDetails2">Edit details</button><button class="btn-solid" id="placeOrder">Place demo order</button></div>`;
+      $('#toDetails2').addEventListener('click', () => { step = 'details'; renderCart(); });
+      $('#placeOrder').addEventListener('click', () => {
+        lastOrder = { no: 'SS-' + Date.now().toString(36).slice(-6).toUpperCase(), ship: { ...ship }, deliv, total: subtotal() + deliv,
+          lines: cart.map(l => ({ ...l, name: byId(l.id).name, price: byId(l.id).price })) };
+        cart = []; saveCart(); step = 'done'; renderCart(); toast('Order placed (demo)');
+        $('#cdBody').scrollTop = 0;
+      });
+    }
+  }
+  $('#cdBody').addEventListener('click', e => {
+    const q = e.target.closest('[data-cq]'), r = e.target.closest('[data-rm]');
+    if (q) { const l = cart[+q.dataset.ci]; l.qty = clamp(l.qty + +q.dataset.cq, 0, 20); if (!l.qty) cart.splice(+q.dataset.ci, 1); saveCart(); renderCart(); }
+    if (r) { const p = byId(cart[+r.dataset.rm].id); cart.splice(+r.dataset.rm, 1); saveCart(); renderCart(); toast(`Removed: ${p.name}`); }
+  });
+  addEventListener('storage', e => { if (e.key === 'ss-cart') { cart = store.get('ss-cart', []); saveCart(); } });
 
   /* ---- copy emails ---- */
   $$('.copy-mail').forEach(b => b.addEventListener('click', () => {
     const txt = b.firstChild.textContent.trim(), em = b.querySelector('em');
-    const done = ok => { em.textContent = ok ? 'COPIED' : 'SELECTED'; b.classList.add('ok'); setTimeout(() => { em.textContent = 'COPY'; b.classList.remove('ok'); }, 1600); };
+    const done = ok => { toast(ok ? `Copied ${txt}` : 'Address selected — press Ctrl+C to copy'); em.textContent = ok ? 'COPIED' : 'SELECTED'; b.classList.add('ok'); setTimeout(() => { em.textContent = 'COPY'; b.classList.remove('ok'); }, 1600); };
     const sel = () => { const r = document.createRange(); r.selectNodeContents(b.firstChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done(false); };
     try { navigator.clipboard.writeText(txt).then(() => done(true), sel); } catch (_) { sel(); }
   }));
@@ -1518,12 +2326,14 @@ footer{border-top:1px solid var(--line);padding-block:70px 30px;background:linea
     const f = e.currentTarget, v = $('#email').value.trim(), msg = $('#joinMsg');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
       f.classList.remove('err'); void f.offsetWidth; f.classList.add('err');
-      msg.textContent = 'Enter an email like name@mail.com'; msg.style.color = 'var(--red)'; return;
+      msg.textContent = 'Enter an email like name@mail.com'; msg.style.color = 'var(--red)'; toast('Check the email address', 'err'); return;
     }
     f.classList.remove('err'); msg.style.color = 'var(--fg)';
-    msg.textContent = `You're on the list: ${v}`; $('#email').value = '';
+    msg.textContent = `Demo signup saved for ${v}. No newsletter is sent yet.`; $('#email').value = ''; toast('Subscribed (demo)');
   });
 
+  document.body.dataset.view = 'home';
+  if (location.hash) route(false);
   onScroll();
 })();
 </script>
